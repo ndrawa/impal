@@ -4,7 +4,7 @@
 		<link type="text/css" rel="stylesheet" href="<?php echo base_url('assets/css/bootstrap.min.css'); ?>"/>
 		<link type="text/css" rel="stylesheet" href="<?php echo base_url('assets/css/style.css'); ?>"/>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-		<link rel="icon" href="<?= base_url(); ?>/assets/pic/favicon.png" type="image/png">
+		<!-- <link rel="icon" href="<?= base_url(); ?>/assets/pic/favicon.png" type="image/png"> -->
 		
 		<title>Login</title>
 	</head>
@@ -29,7 +29,7 @@
 				<input type="password" id="password" class="form-control" name="password" placeholder="Password" required>
 			</div>
 			<button type="submit" class="btn btn-primary">Login</button>
-			<p>Don't have an account? Register <a href="<?= site_url('register/index') ?>">here</a></p>
+			<!-- <p>Don't have an account? Register <a href="<?= site_url('register/index') ?>">here</a></p> -->
 		</form>
 		<script src="<?php echo base_url('assets/js/jquery-3.2.1.min.js'); ?>"></script>
 	</body>
