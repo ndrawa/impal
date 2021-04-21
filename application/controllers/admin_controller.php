@@ -34,7 +34,7 @@ class admin_controller extends CI_Controller
 		}else{
 			$this->admin_model->create_matakuliah();
 			$this->session->set_flashdata('flash','added success');
-			$this->V_lihatJadwalKosong();
+			// $this->V_lihatJadwalKosong();
 		}
 	}
 

@@ -31,6 +31,11 @@
           <div class="text-center mt-3">
             <button class="btn btn-unique" type="submit" name="tambah">Save</button>
           </div>
+          <div class="alert alert-success" role="alert">
+            <h4 class="alert-heading">Berhasil</h4>
+            <p>Data mata kuliah telah berhasil ditambahkan</p>
+            <hr>
+          </div>
         </form>
       </div>
     </div>
