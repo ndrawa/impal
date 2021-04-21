@@ -30,11 +30,12 @@ class admin_controller extends CI_Controller
 		$this->form_validation->set_rules('id_pengajar','nama_pengajar','required');
 		if ($this->form_validation->run() == false){
 			$this->load->view('admin/create_matakuliah', $data);
-			$this->session->set_flashdata('flash','added failed');
+			$this->session->set_flashdata('flash_add','added failed');
 		}else{
 			$this->admin_model->create_matakuliah();
-			$this->session->set_flashdata('flash','added success');
-			$this->load->view('admin/berhasil', $data);
+			$this->session->set_flashdata('flash_add','added success');
+			// redirect('/create_matakuliah');
+			$this->load->view('admin/create_matakuliah', $data);
             // $this->alert('message');
 			// $this->V_lihatJadwalKosong();
 		}

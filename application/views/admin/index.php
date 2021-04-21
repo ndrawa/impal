@@ -9,7 +9,7 @@
 <body>
 	<nav class="navbar navbar-light bg-light justify-content-between mb-5">
 	  	<a class="navbar-brand">Navbar</a>
-	  	<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Logout</button>
+	  	<button class="btn btn-outline-warning my-2 my-sm-0" type="submit" onclick="window.location.href='<?php echo base_url().'index.php/login/logout'?>'"> Logout </button>
 	</nav>
     <div class="container">
     <div class="row">

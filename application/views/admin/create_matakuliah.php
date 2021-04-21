@@ -9,7 +9,7 @@
 <body>
 	<nav class="navbar navbar-light bg-light justify-content-between mb-5">
 	  	<a class="navbar-brand">Navbar</a>
-	  	<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Logout</button>
+	  	<button class="btn btn-outline-warning my-2 my-sm-0" type="submit" onclick="window.location.href='<?php echo base_url().'index.php/login/logout'?>'"> Logout </button>
 	</nav>
     <div class="container">
     <div class="row">
@@ -17,6 +17,11 @@
       <p class="h5 text-center mb-4">Create Matakuliah</p>
         <form class="form-control" action="" method="post" id="createmateri">
           <label for="defaultFormRegisterNameEx" class="grey-text">Kode MataKuliah</label>
+          <?php if($this->session->flashdata('flash_add')){ ?>
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+              <?= $this->session->flashdata('flash_add')?>
+            </div>
+          <?php }?>
           <input type="text" id="id_matakuliah" name="id_matakuliah"  class="form-control"/>
           <br/>
           <label for="defaultFormRegisterEmailEx" class="grey-text">Nama MataKuliah</label>
@@ -30,11 +35,6 @@
           <br/>
           <div class="text-center mt-3">
             <button class="btn btn-unique" type="submit" name="tambah">Save</button>
-          </div>
-          <div class="alert alert-success" role="alert">
-            <h4 class="alert-heading">Berhasil</h4>
-            <p>Data mata kuliah telah berhasil ditambahkan</p>
-            <hr>
           </div>
         </form>
       </div>
