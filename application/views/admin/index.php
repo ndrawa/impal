@@ -17,11 +17,14 @@
       <p class="h5 text-center mb-4">Menu Admin</p>
         <form class="form-control" action="<?= site_url('login/auth') ?>" method="post" id="createmateri">
           <div class="text-center">
-            <button class="btn btn-unique" type="submit">Crate MataKuliah</button>
-            <a href="<?= site_url('admin_controller/create_matakuliah/'); ?>">c</a>
-            <button class="btn btn-unique" type="submit">Edit MataKuliah</button>
-            <button class="btn btn-unique" type="submit">View MataKuliah</button>
-            <button class="btn btn-unique" type="submit">Delete MataKuliah</button>
+            <!-- <button class="btn btn-unique" onclick="window.location.href='<?= site_url('admin_controller/create_matakuliah/'); ?>'">Crate MataKuliah</button> -->
+            <a href="<?= site_url('admin_controller/create_matakuliah/'); ?>">Crate MataKuliah   </a>
+            <a href="<?= site_url('admin_controller/view_matakuliah/'); ?>">View MataKuliah   </a>
+            <a href="<?= site_url('admin_controller/edit_matakuliah/'); ?>">Edit MataKuliah   </a>
+            <a href="<?= site_url('admin_controller/delete_matakuliah/'); ?>">Delete MataKuliah   </a>
+            <!-- <button class="btn btn-unique">Edit MataKuliah</button> -->
+            <!-- <button class="btn btn-unique">View MataKuliah</button> -->
+            <!-- <button class="btn btn-unique">Delete MataKuliah</button> -->
           </div>
         </form>
       </div>
