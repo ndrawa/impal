@@ -35,7 +35,7 @@ class login extends CI_controller {
         } else {
             if($username=='admin' && $password=='admin'){
                 $this->session->set_userdata('session_login','admin');
-                $this->load->view('admin/Admin_View');
+                $this->load->view('admin/index');
                 // $id_matakuliah=$this->input->post('id_matakuliah');
                 // $nama_matakuliah=$this->input->post('nama_matakuliah');
                 // $id_pengajar=$this->input->post('id_pengajar');
