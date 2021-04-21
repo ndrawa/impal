@@ -15,7 +15,7 @@
     <div class="row">
       <div class="col">
       <p class="h5 text-center mb-4">Create Matakuliah</p>
-        <form class="form-control" action="<?= site_url('login/auth') ?>" method="post" id="createmateri">
+        <form class="form-control" action="" method="post" id="createmateri">
           <label for="defaultFormRegisterNameEx" class="grey-text">Kode MataKuliah</label>
           <input type="text" id="id_matakuliah" name="id_matakuliah"  class="form-control"/>
           <br/>
