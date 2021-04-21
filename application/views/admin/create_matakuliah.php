@@ -29,7 +29,7 @@
           <input type="text" id="nama_pengajar" name="nama_pengajar" class="form-control"/>
           <br/>
           <div class="text-center mt-3">
-            <button class="btn btn-unique" type="submit">Save</button>
+            <button class="btn btn-unique" type="submit" name="tambah">Save</button>
           </div>
         </form>
       </div>
