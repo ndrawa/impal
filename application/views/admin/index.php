@@ -18,6 +18,7 @@
         <form class="form-control" action="<?= site_url('login/auth') ?>" method="post" id="createmateri">
           <div class="text-center">
             <button class="btn btn-unique" type="submit">Crate MataKuliah</button>
+            <a href="<?= site_url('admin_controller/create_matakuliah/'); ?>">c</a>
             <button class="btn btn-unique" type="submit">Edit MataKuliah</button>
             <button class="btn btn-unique" type="submit">View MataKuliah</button>
             <button class="btn btn-unique" type="submit">Delete MataKuliah</button>

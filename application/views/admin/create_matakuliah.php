@@ -17,16 +17,16 @@
       <p class="h5 text-center mb-4">Create Matakuliah</p>
         <form class="form-control" action="<?= site_url('login/auth') ?>" method="post" id="createmateri">
           <label for="defaultFormRegisterNameEx" class="grey-text">Kode MataKuliah</label>
-          <input type="text" id="id_matakuliah" class="form-control"/>
+          <input type="text" id="id_matakuliah" name="id_matakuliah"  class="form-control"/>
           <br/>
           <label for="defaultFormRegisterEmailEx" class="grey-text">Nama MataKuliah</label>
-          <input type="email" id="nama_matakuliah" class="form-control"/>
+          <input type="text" id="nama_matakuliah" name="nama_matakuliah" class="form-control"/>
           <br/>
           <label for="defaultFormRegisterConfirmEx" class="grey-text">Kode Pengajar</label>
-          <input type="email" id="id_pengajar" class="form-control"/>
+          <input type="text" id="id_pengajar" name="id_pengajar" class="form-control"/>
           <br/>
           <label for="defaultFormRegisterPasswordEx" class="grey-text">Nama Pengajar</label>
-          <input type="password" id="nama_pengajar" class="form-control"/>
+          <input type="text" id="nama_pengajar" name="nama_pengajar" class="form-control"/>
           <br/>
           <div class="text-center mt-3">
             <button class="btn btn-unique" type="submit">Save</button>
