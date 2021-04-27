@@ -9,4 +9,8 @@
 			$query=$this->db->query("SELECT * FROM pengajar WHERE email='$username' AND password='$password' LIMIT 1");
 			return $query;
 		}
+		function auth_admin($username, $password){
+			$query=$this->db->query("SELECT * FROM admin WHERE email='$username' AND password='$password' LIMIT 1");
+			return $query;
+		}
 	}

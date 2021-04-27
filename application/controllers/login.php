@@ -25,6 +25,7 @@ class login extends CI_controller {
         }
         $cek_pelajar=$this->Login_Model->auth_pelajar($username,$password);        
         $cek_pengajar=$this->Login_Model->auth_pengajar($username,$password);
+        $cek_admin=$this->Login_Model->auth_admin($username,$password);
  
         if($this->session->userdata('session_login') == 'pelajar') {
             $this->load->view('pelajar/Pelajar_View', $data);
