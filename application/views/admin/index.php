@@ -7,17 +7,16 @@
 	<title> Admin </title>
 </head>
 <body>
-	<nav class="navbar navbar-light bg-light justify-content-between mb-5">
-	  	<a class="navbar-brand">Navbar</a>
-	  	<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Logout</button>
-	</nav>
+    <?php 
+			$this->load->view('template/navbar');
+		?>
     <div class="container">
     <div class="row">
       <div class="col">
       <p class="h5 text-center mb-4">Menu Admin</p>
         <form class="form-control" action="<?= site_url('login/auth') ?>" method="post" id="createmateri">
           <div class="text-center">
-            <button class="btn btn-unique" type="submit">Crate MataKuliah</button>
+            <button class="btn btn-unique" type="submit">Create MataKuliah</button>
             <button class="btn btn-unique" type="submit">Edit MataKuliah</button>
             <button class="btn btn-unique" type="submit">View MataKuliah</button>
             <button class="btn btn-unique" type="submit">Delete MataKuliah</button>
