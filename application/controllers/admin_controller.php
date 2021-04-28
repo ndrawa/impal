@@ -36,8 +36,8 @@ class admin_controller extends CI_Controller
 			$this->session->set_flashdata('flash_add','added success');
 			// redirect('/create_matakuliah');
 			$this->load->view('admin/create_matakuliah', $data);
-            // $this->alert('message');
-			// $this->V_lihatJadwalKosong();
+			echo $this->session->set_flashdata('flash','added failed');
+			// redirect('admin/create_matakuliah');
 		}
 	}
 
@@ -69,7 +69,7 @@ class admin_controller extends CI_Controller
 		echo json_encode($result);
 	}
 
-	    public function create()
+	public function create()
     {
         $this->load->model('M_Dokter');
         $this->load->helper('form_helper');	
