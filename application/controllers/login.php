@@ -25,7 +25,6 @@ class login extends CI_controller {
         }
         $cek_pelajar=$this->Login_Model->auth_pelajar($username,$password);        
         $cek_pengajar=$this->Login_Model->auth_pengajar($username,$password);
-        $cek_admin=$this->Login_Model->auth_admin($username,$password);
  
         if($this->session->userdata('session_login') == 'pelajar') {
             $this->load->view('pelajar/Pelajar_View', $data);
@@ -36,8 +35,7 @@ class login extends CI_controller {
         } else {
             if($username=='admin' && $password=='admin'){
                 $this->session->set_userdata('session_login','admin');
-                $this->load->view('admin/V_UtamaAdmin');
-                $this->load->view('template/footer'); 
+                $this->load->view('admin/index'); 
             }else{
                 if($cek_pelajar->num_rows() > 0){ //jika login sebagai 
                     $data=$cek_pelajar->row_array();
