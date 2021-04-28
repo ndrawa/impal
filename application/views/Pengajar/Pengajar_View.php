@@ -7,10 +7,9 @@
 	<title> Pengajar </title>
 </head>
 <body>
-	<nav class="navbar navbar-light bg-light justify-content-between">
-	  	<a class="navbar-brand">Navbar</a>
-	  	<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-	</nav>
+	<?php 
+		$this->load->view('template/navbar');
+	?>
 	
 	<h1>Halaman Pengajar</h1>
 
