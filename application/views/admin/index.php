@@ -18,7 +18,7 @@
         <form class="form-control" action="<?= site_url('login/auth') ?>" method="post" id="createmateri">
           <div class="text-center">
             <!-- <button class="btn btn-unique" onclick="window.location.href='<?= site_url('admin_controller/create_matakuliah/'); ?>'">Crate MataKuliah</button> -->
-            <a href="<?= site_url('admin_controller/create_matakuliah/'); ?>">Crate MataKuliah   </a>
+            <a href="<?= site_url('admin_controller/create_matakuliah/'); ?>">Create MataKuliah   </a>
             <a href="<?= site_url('admin_controller/view_matakuliah/'); ?>">View MataKuliah   </a>
             <a href="<?= site_url('admin_controller/edit_matakuliah/'); ?>">Edit MataKuliah   </a>
             <a href="<?= site_url('admin_controller/delete_matakuliah/'); ?>">Delete MataKuliah   </a>
