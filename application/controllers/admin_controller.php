@@ -37,7 +37,7 @@ class admin_controller extends CI_Controller
 			// redirect('/create_matakuliah');
 			$this->load->view('admin/create_matakuliah', $data);
 			echo $this->session->set_flashdata('flash','added success');
-			// redirect('admin/create_matakuliah');
+			echo $this->session->set_flashdata('flash','added failed');
 		}
 	}
 
