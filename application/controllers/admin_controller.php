@@ -36,9 +36,34 @@ class admin_controller extends CI_Controller
 			$this->session->set_flashdata('flash_add','added success');
 			// redirect('/create_matakuliah');
 			$this->load->view('admin/create_matakuliah', $data);
+			echo $this->session->set_flashdata('flash','added success');
 			echo $this->session->set_flashdata('flash','added failed');
+		}
+	}
+
+	public function edit_matakuliah()
+	{
+		$data['judul'] = 'Edit Matakuliah';
+		$this->form_validation->set_rules('id_matakuliah','nama_matakuliah','required');
+		$this->form_validation->set_rules('id_pengajar','nama_pengajar','required');
+		if ($this->form_validation->run() == false){
+			$this->load->view('admin/edit_matakuliah', $data);
+			$this->session->set_flashdata('flash_add','added failed');
+		}else{
+			$this->admin_model->edit_matakuliah();
+			$this->session->set_flashdata('flash_add','added success');
+			// redirect('/create_matakuliah');
+			$this->load->view('admin/edit_matakuliah', $data);
+			echo $this->session->set_flashdata('flash','added success');
 			// redirect('admin/create_matakuliah');
 		}
+	}
+
+	public function cari_idmatkul()
+	{
+		$id_matakuliah = $_POST["id_matakuliah"];
+		$data = $this->admin_model->cari_idmatkul();
+		$this->load->view('admin/edit_matakuliah',$data);
 	}
 
 	public function V_Ubah(){

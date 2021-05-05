@@ -10,4 +10,13 @@
 			];
 			$this->db->insert('matakuliah',$data);
 		}
+
+		public function cari_idmatkul()
+		{
+			$this->db->select('kode_matakuliah, kode_pengajar, nama_matakuliah');
+			$this->db->from('matakuliah');
+			$this->db->where('kode_matakuliah', $this->input->post('id_matakuliah'));
+			$query = $this->db->join('pengajar', 'matakuliah.kode_pengajar = pengajar.kode_pengajar');
+			return $query;
+		}
 	}

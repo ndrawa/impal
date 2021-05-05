@@ -31,7 +31,7 @@ class login extends CI_controller {
         } else if ($this->session->userdata('session_login') == 'pengajar') {
             $this->load->view('pengajar/Pengajar_View', $data);
         } else if ($this->session->userdata('session_login') == 'admin') {
-
+            $this->load->view('admin/index');
         } else {
             if($username=='admin' && $password=='admin'){
                 $this->session->set_userdata('session_login','admin');
