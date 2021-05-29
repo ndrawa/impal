@@ -1,3 +1,16 @@
+<!-- 
+pendahuluan : ini adalah controller dari pelajar, setiap akan mengolah data akan menggunakan metode-metode 
+yang ada pada controller ini. mengacu pada perancangan dari kelas pelajar yaitu pada 
+https://github.com/ndrawa/impal/blob/master/DPPL.pdf  hal 21.
+-->
+
+<!-- 
+Data yang diolah adalah data-data yang meiliki hubungan dengan kelas pelajar seperti nama, nim, jurusan dan semester
+ -->
+
+<!-- 
+get_pelajar_data() untuk mengambil data berdasarkan username yang diambil dari session.
+-->
 <?php
  class pelajar extends CI_Controller {
  	public function __construct() {
