@@ -6,7 +6,7 @@ class login extends CI_controller {
 	{
 		parent::__construct();
 		$this->load->model('Login_Model');
-        // $this->load->model('Pelajar_Model')
+        // $this->load->model('admin_model');
         // $this->load->model('Pengajar_Model')
 	}
 
@@ -31,11 +31,17 @@ class login extends CI_controller {
         } else if ($this->session->userdata('session_login') == 'pengajar') {
             $this->load->view('pengajar/Pengajar_View', $data);
         } else if ($this->session->userdata('session_login') == 'admin') {
-
+            $this->load->view('admin/index');
         } else {
             if($username=='admin' && $password=='admin'){
                 $this->session->set_userdata('session_login','admin');
-                $this->load->view('admin/index'); 
+                $this->load->view('admin/index');
+                // $id_matakuliah=$this->input->post('id_matakuliah');
+                // $nama_matakuliah=$this->input->post('nama_matakuliah');
+                // $id_pengajar=$this->input->post('id_pengajar');
+                // $test = $this->admin_model->create_matakuliah($id_matakuliah,$nama_matakuliah,$id_pengajar);
+
+                // $this->load->view('template/footer'); 
             }else{
                 if($cek_pelajar->num_rows() > 0){ //jika login sebagai 
                     $data=$cek_pelajar->row_array();
@@ -44,14 +50,14 @@ class login extends CI_controller {
                     $this->session->set_userdata('session_username',$data['email']);
                     $this->session->set_userdata('session_password',$data['password']);
                     $this->session->set_userdata('session_status','pelajar');
-                    $this->load->view('pelajar/Pelajar_View', $data);
+                    $this->load->view('pelajar/pelajar_view', $data);
                 }else if($cek_pengajar->num_rows() > 0){ //jika login sebagai pengajar
                     $data=$cek_pengajar->row_array();
                     $this->session->set_userdata('session_login','pengajar');
                     $this->session->set_userdata('session_nama',$data['nama']);
                     $this->session->set_userdata('session_username',$data['email']);
                     $this->session->set_userdata('session_status','pengajar');
-                    $this->load->view('pengajar/Pengajar_View', $data);
+                    $this->load->view('pengajar/pengajar_view', $data);
                 }else{  // jika username dan password tidak ditemukan atau salah
                     $url=base_url();
                     echo $this->session->set_flashdata('message','Username or Password incorrect.');

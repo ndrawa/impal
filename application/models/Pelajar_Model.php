@@ -1,5 +1,5 @@
 <?php
-	class Login_Model extends CI_Model {
+	class pelajar_model extends CI_Model {
 		function auth_pelajar($username,$password){
 			$query=$this->db->query("SELECT * FROM pelajar WHERE username='$username' AND password='$password' LIMIT 1");
 			return $query;
