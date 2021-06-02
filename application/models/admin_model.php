@@ -37,7 +37,9 @@
 			$this->db->from('matakuliah');
 			$this->db->where('kode_matakuliah', $this->input->post('id_matakuliah'));
 			$query = $this->db->join('pengajar', 'matakuliah.kode_pengajar = pengajar.kode_pengajar');
-		// fungsi upload data matakuliah
+			// fungsi upload data matakuliah
+		}
+
 		function Edit_Matakuliah(){
 			// mengambil inputan id matakuliah dan disimpan pada variable kode_matakuliah
 			$kode_matakuliah=$this->input->post('id_matakuliah');
