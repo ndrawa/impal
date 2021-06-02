@@ -12,8 +12,9 @@
         $this->load->view('template/back');
 	?>
 	<p class="h5 text-center mb-4">Tabel Pengajar</p>
-		<table class="table table-dark">
-		  <tbody>	  	
+		<table class="table mt-5" border="1">
+		  <tbody>
+
 			    <tr class="table-active">
 			      <td>No</td>
 			      <td>Pengajar</td>
@@ -21,16 +22,19 @@
 			      <td>Matkul</td>
 			      <td>ID Matakuliah</td>
 			    </tr>
+			    <?php foreach($pengajar as $pgr): ?>
 			    <tr>
 			    	<td>1</td>
-			    	<?php foreach($pengajar as $pgr) :?>
 			    	<td> <?= $pgr['nama'] ;?></td>		
 			        <td> <?= $pgr['kode_pengajar'] ;?></td>
-			        <?php endforeach; ?>
+			        <td> <?= $pgr['nama_matakuliah'] ;?></td>
+			        <td> <?= $pgr['kode_matakuliah'] ;?></td>
+			        
 			    </tr>
 			    <tr>
-			     
+			    	
 			    </tr>
+			    <?php endforeach; ?>
 		   </tbody>
 		</table>    
 </body>
