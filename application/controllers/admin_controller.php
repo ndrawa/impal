@@ -59,6 +59,17 @@ class admin_controller extends CI_Controller
 		}
 	}
 
+	public function view_pengajar()
+	{
+		$data['judul'] = 'View Pengajar';
+		$data['pengajar'] = $this->admin_model->getall_pengajar();
+		$this->load->view('admin/view_pengajar',$data);
+		
+
+
+	}
+
+
 	public function cari_idmatkul()
 	{
 		$id_matakuliah = $_POST["id_matakuliah"];
