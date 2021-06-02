@@ -41,6 +41,11 @@ class admin_controller extends CI_Controller
 		}
 	}
 
+	public view_matakuliah()
+	{
+		$this->load->view('admin/view_matakuliah');
+	}
+
 	public function edit_matakuliah()
 	{
 		$data['judul'] = 'Edit Matakuliah';

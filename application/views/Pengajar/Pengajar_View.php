@@ -12,6 +12,6 @@
 	?>
 	
 	<h1>Halaman Pengajar</h1>
-
+	<a href="<?= site_url('pengajar_controller/input_materi/'); ?>">Input Materi </a>
 </body>
 </html>

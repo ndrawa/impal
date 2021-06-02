@@ -15,4 +15,8 @@
 		$result = $this->pasien_model->get_by_username($username);
     	echo json_encode($result);
 	}
+
+	public function input_materi() {
+		$this->load->view('Pengajar/input_materi');
+	}
 }

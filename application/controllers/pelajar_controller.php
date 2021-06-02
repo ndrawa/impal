@@ -15,4 +15,9 @@
 		$result = $this->pasien_model->get_by_username($username);
     	echo json_encode($result);
 	}
+
+	public view_matakuliah()
+	{
+		$this->load->view('pelajar/view_materi');
+	}
 }
