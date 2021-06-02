@@ -12,7 +12,7 @@
 
 	public function get_pengajar_data() {
 		$username = $this->sesison->userdata('session_username');
-		$result = $this->pasien_model->get_by_username($username);
+		$result = $this->pengajar_model->get_by_username($username);
     	echo json_encode($result);
 	}
 }
