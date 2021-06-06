@@ -24,4 +24,15 @@ class pengajar_controller extends CI_Controller
 			// echo $this->session->set_flashdata('flash','added failed');
 		}
 	}
+
+	public function view_materi() {
+		$pengajar = $this->session->userdata('session_kode');
+		$data['data_matkul'] = $this->pengajar_model->get_matkul($pengajar);
+		$data['data_materi'] = $this->pengajar_model->get_materi($pengajar);
+		$this->load->view('Pengajar/view_materi', $data);
+	}
+
+	public function fetch_materi($kode_matkul) {
+
+	}
 }

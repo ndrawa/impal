@@ -24,4 +24,17 @@ class pengajar_model extends CI_Model
 		];
 		$this->db->insert('materi',$data);
 	}
+
+	function get_materi($pengajar) {
+		$kode_matkul = $this->input->post('id_matakuliah');
+		if ($kode_matkul != "") {
+			$query = $this->db->query("SELECT kode_materi, nama_materi, nama_matakuliah FROM materi 
+				INNER JOIN matakuliah ON matakuliah.kode_matakuliah=materi.kode_matakuliah
+				WHERE matakuliah.kode_pengajar='$pengajar' AND materi.kode_matakuliah='$kode_matkul'");
+			return $query->result_array();
+		} else {
+			return NULL;
+		}
+	}
+
 }
