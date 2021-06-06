@@ -14,9 +14,11 @@
     <h3 style="text-align: center;"> Input Materi </h3>
     <div style="margin:0 auto; width:500px;">
 		<form>
-		  	<div class="form-group" >
+		  	<div class="form-group">
 			    <select class="form-select" aria-label="Default select example">
 					<option selected>Select - Mata kuliah</option>
+					<?php 
+						foreach 
 					<option value="1">DAP</option>
 					<option value="2">Kalkulus</option>
 					<option value="3">STD</option>

@@ -9,4 +9,8 @@
 			$query=$this->db->query("SELECT * FROM pengajar WHERE username='$username' AND password='$password' LIMIT 1");
 			return $query;
 		}
+
+		function get_data_materi(){
+			
+		}
 	}
