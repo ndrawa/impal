@@ -19,4 +19,13 @@
 			$query = $this->db->join('pengajar', 'matakuliah.kode_pengajar = pengajar.kode_pengajar');
 			return $query;
 		}
+
+		public function getall_pengajar()
+		{
+			$result = $this->db->query("SELECT pengajar.nama , pengajar.kode_pengajar, matakuliah.nama_matakuliah ,
+										matakuliah.kode_matakuliah
+									   FROM pengajar
+									   join matakuliah on matakuliah.kode_pengajar = pengajar.kode_pengajar;");
+       		return $result->result_array();
+		}
 	}
