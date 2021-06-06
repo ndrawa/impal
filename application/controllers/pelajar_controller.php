@@ -1,5 +1,5 @@
 <?php
- class pelajar extends CI_Controller {
+ class pelajar_controller extends CI_Controller {
  	public function __construct() {
  		parent::__construct();
  		$this->load->model('pelajar_model');
@@ -14,5 +14,13 @@
 		$username = $this->sesison->userdata('session_username');
 		$result = $this->pasien_model->get_by_username($username);
     	echo json_encode($result);
+	}
+
+	public function view_matakuliah() {
+		$this->load->view('Pelajar/view_matakuliah');
+	}
+
+	public function view_materi() {
+		$this->load->view('Pelajar/view_materi');
 	}
 }

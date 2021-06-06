@@ -4,15 +4,21 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 	<link type="text/css" rel="stylesheet" href="<?php echo base_url('assets/css/style.css'); ?>"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-	<title> Pelajar </title>
+	<title> Admin </title>
 </head>
 <body>
-	<?php 
-		$this->load->view('template/navbar');
-	?>
+    <?php 
+        $this->load->view('template/navbar');
+        $this->load->view('template/back');
+    ?>
 
-	<h1>Halaman Pelajar</h1>
-	<a href="<?= site_url('pelajar_controller/view_matakuliah/'); ?>">View MataKuliah </a>
-	<a href="<?= site_url('pelajar_controller/view_materi/'); ?>">View Materi </a>
+    <div class="container">
+    <div class="row">
+      <div class="col">
+      <p class="h5 text-center mb-4">View Matakuliah</p>
+        <p> Matakuliah kosong </p>
+      </div>
+    </div>
+    </div>    
 </body>
 </html>

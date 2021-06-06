@@ -27,9 +27,9 @@ class login extends CI_controller {
         $cek_pengajar=$this->Login_Model->auth_pengajar($username,$password);
  
         if($this->session->userdata('session_login') == 'pelajar') {
-            $this->load->view('pelajar/Pelajar_View', $data);
+            $this->load->view('pelajar/Pelajar_View');
         } else if ($this->session->userdata('session_login') == 'pengajar') {
-            $this->load->view('pengajar/Pengajar_View', $data);
+            $this->load->view('pengajar/Pengajar_View');
         } else if ($this->session->userdata('session_login') == 'admin') {
             $this->load->view('admin/index');
         } else {
