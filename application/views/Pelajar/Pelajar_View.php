@@ -12,6 +12,7 @@
 	?>
 
 	<h1>Halaman Pelajar</h1>
-	<a href="<?= site_url('pelajar_controller/view_matakuliah/'); ?>">View MataKuliah   </a>
+	<a href="<?= site_url('pelajar_controller/view_matakuliah/'); ?>">View MataKuliah </a>
+	<a href="<?= site_url('pelajar_controller/view_materi/'); ?>">View Materi </a>
 </body>
 </html>

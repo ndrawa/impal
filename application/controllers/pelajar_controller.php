@@ -1,5 +1,5 @@
 <?php
- class pelajar extends CI_Controller {
+ class pelajar_controller extends CI_Controller {
  	public function __construct() {
  		parent::__construct();
  		$this->load->model('pelajar_model');
@@ -16,8 +16,11 @@
     	echo json_encode($result);
 	}
 
-	public view_matakuliah()
-	{
-		$this->load->view('pelajar/view_materi');
+	public function view_matakuliah() {
+		$this->load->view('Pelajar/view_matakuliah');
+	}
+
+	public function view_materi() {
+		$this->load->view('Pelajar/view_materi');
 	}
 }

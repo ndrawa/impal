@@ -7,7 +7,6 @@ class admin_controller extends CI_Controller
 		$this->load->model('admin_model');
 		$this->load->library('form_validation');
 	}
-       
         
 	public function index()
 	{
@@ -41,9 +40,13 @@ class admin_controller extends CI_Controller
 		}
 	}
 
-	public view_matakuliah()
+	public function view_matakuliah()
 	{
 		$this->load->view('admin/view_matakuliah');
+	}
+
+	public function input_materi() {
+		$this->load->view('Pengajar/input_materi');
 	}
 
 	public function edit_matakuliah()
