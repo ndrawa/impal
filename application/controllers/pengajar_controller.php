@@ -15,10 +15,10 @@ class pengajar_controller extends CI_Controller
 		$this->form_validation->set_rules('id_materi','nama_materi','required');
 		if ($this->form_validation->run() == false){
 			$this->load->view('Pengajar/input_materi',$data);
-			$this->session->set_flashdata('flash_add','added failed');
+			$this->session->set_flashdata('flash_add','failed');
 		}else{
 			$this->pengajar_model->create_materi();
-			$this->session->set_flashdata('flash_add','added success');
+			$this->session->set_flashdata('flash_add','success');
 			$this->load->view('Pengajar/input_materi',$data);
 			// echo $this->session->set_flashdata('flash','added success');
 			// echo $this->session->set_flashdata('flash','added failed');

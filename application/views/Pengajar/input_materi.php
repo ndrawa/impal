@@ -14,11 +14,17 @@
     <h3 style="text-align: center;"> Input Materi </h3>
     <div style="margin:0 auto; width:500px;">
 		<form class="form-control" action="" method="post">
-			<?php if($this->session->flashdata('flash_add')){ ?>
+			<?php if($this->session->flashdata('flash_add') == 'success'){ ?>
 	            <div class="alert alert-success alert-dismissible fade show" role="alert">
-	            	<?= $this->session->flashdata('flash_add')?>
+	            	<?php echo $this->session->set_flashdata('flash_add','Data materi berhasil ditambahkan');
+	            	echo $this->session->flashdata('flash_add'); ?>
 	            </div>
-          	<?php }?>
+          	<?php } else if ($this->session->flashdata('flash_add') == 'failed') { ?>
+          		<div class="alert alert-danger alert-dismissible fade show" role="alert">
+	            	<?php echo $this->session->set_flashdata('flash_add','Data materi gagal ditambahkan');
+	            	echo $this->session->flashdata('flash_add'); ?>
+	            </div>
+	        <?php } ?>
 		  	<div class="form-group">
 			    <select class="form-select" aria-label="Default select example" name="id_matakuliah">
 					<option selected> Select - Mata kuliah</option>
