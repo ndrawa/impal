@@ -13,30 +13,43 @@
     ?>
     <h3 style="text-align: center;"> Input Materi </h3>
     <div style="margin:0 auto; width:500px;">
-		<form>
-		  	<div class="form-group" >
-			    <select class="form-select" aria-label="Default select example">
-					<option selected>Select - Mata kuliah</option>
-					<option value="1">DAP</option>
-					<option value="2">Kalkulus</option>
-					<option value="3">STD</option>
+		<form class="form-control" action="" method="post">
+			<?php if($this->session->flashdata('flash_add') == 'success'){ ?>
+	            <div class="alert alert-success alert-dismissible fade show" role="alert">
+	            	<?php echo $this->session->set_flashdata('flash_add','Data materi berhasil ditambahkan');
+	            	echo $this->session->flashdata('flash_add'); ?>
+	            </div>
+          	<?php } else if ($this->session->flashdata('flash_add') == 'failed') { ?>
+          		<div class="alert alert-danger alert-dismissible fade show" role="alert">
+	            	<?php echo $this->session->set_flashdata('flash_add','Data materi gagal ditambahkan');
+	            	echo $this->session->flashdata('flash_add'); ?>
+	            </div>
+	        <?php } ?>
+		  	<div class="form-group">
+			    <select class="form-select" aria-label="Default select example" name="id_matakuliah">
+					<option selected> Select - Mata kuliah</option>
+					<?php
+						$idx = 0;
+						foreach ($data_matkul as $dm) { ?>
+							<option value = <?= $dm['kode_matakuliah']; ?>> <?= $dm['nama_matakuliah']; ?> </option>
+					<?php } ?>
 				</select>
 		  	</div>
 			 <div class="form-group" >
-			    <!-- <label for="exampleInputPassword1">ID Materi</label> -->
-			    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="ID Materi">
+			    <input type="text" class="form-control" id="id_materi" name="id_materi" placeholder="ID Materi">
 		  	</div>
 
 		  	<div class="form-group" >
-			    <!-- <label for="exampleInputPassword1">Nama Materi</label> -->
-			    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Nama Materi">
+			    <input type="text" class="form-control" id="nama_materi" name="nama_materi" placeholder="Nama Materi">
 		  	</div>
 
-		  	<div class="form-group" >
-			    <!-- <label for="exampleFormControlFile1"> Choose File </label> -->
+		  	<!-- <div class="form-group" >
+			     <label for="exampleFormControlFile1"> Choose File </label>
 		    	<input type="file" class="form-control-file" id="exampleFormControlFile1">
-		  	</div>
-			<button type="submit" class="btn btn-primary" style="left: 50%; position: absolute;">Save</button>
+		  	</div> -->
+		  	<div class="text-center mt-3">
+				<button type="submit" class="btn btn-primary" name="tambah">Save</button>
+			</div>
 		</form>
 	</div>
 </body>
