@@ -29,20 +29,15 @@ class admin_controller extends CI_Controller
 		$this->form_validation->set_rules('id_pengajar','nama_pengajar','required');
 		if ($this->form_validation->run() == false){
 			$this->load->view('admin/create_matakuliah', $data);
-			$this->session->set_flashdata('flash_add','added failed');
+			$this->session->set_flashdata('flash_add','Added failed');
 		}else{
 			$this->admin_model->create_matakuliah();
-			$this->session->set_flashdata('flash_add','added success');
+			$this->session->set_flashdata('flash_add','Added success');
 			// redirect('/create_matakuliah');
 			$this->load->view('admin/create_matakuliah', $data);
-			echo $this->session->set_flashdata('flash','added success');
-			echo $this->session->set_flashdata('flash','added failed');
+			echo $this->session->set_flashdata('flash','Added success');
+			echo $this->session->set_flashdata('flash','Added failed');
 		}
-	}
-
-	public function view_matakuliah()
-	{
-		$this->load->view('admin/view_matakuliah');
 	}
 
 	public function edit_matakuliah()
@@ -52,13 +47,13 @@ class admin_controller extends CI_Controller
 		$this->form_validation->set_rules('id_pengajar','nama_pengajar','required');
 		if ($this->form_validation->run() == false){
 			$this->load->view('admin/edit_matakuliah', $data);
-			$this->session->set_flashdata('flash_add','added failed');
+			$this->session->set_flashdata('flash_add','Update failed');
 		}else{
 			$this->admin_model->edit_matakuliah();
-			$this->session->set_flashdata('flash_add','added success');
+			$this->session->set_flashdata('flash_add','Update success');
 			// redirect('/create_matakuliah');
 			$this->load->view('admin/edit_matakuliah', $data);
-			echo $this->session->set_flashdata('flash','added success');
+			echo $this->session->set_flashdata('flash','Update success');
 			// redirect('admin/create_matakuliah');
 		}
 	}
@@ -79,6 +74,11 @@ class admin_controller extends CI_Controller
 			echo $this->session->set_flashdata('flash','Delete success');
 			// redirect('admin/create_matakuliah');
 		}
+	}
+
+	public function view_matakuliah()
+	{
+		$this->load->view('admin/view_matakuliah');
 	}
 
 	// ---------------------------------------------------------------------------------------------------

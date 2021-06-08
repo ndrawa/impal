@@ -30,7 +30,7 @@
 			    	<td>1</td>
 			        <td> Rezim Sisca Kohl</td>
 			    	<td> RSK</td>		
-			    	<td> Prioga Sugeng Aditya</td>		
+			    	<td> Priyoga Sugeng Aditya</td>		
 			        <td> PSA</td>
 			    </tr>
 			    <!-- <?php foreach($pengajar as $pgr): ?>
