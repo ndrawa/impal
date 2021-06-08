@@ -45,10 +45,6 @@ class admin_controller extends CI_Controller
 		$this->load->view('admin/view_matakuliah');
 	}
 
-	public function input_materi() {
-		$this->load->view('Pengajar/input_materi');
-	}
-
 	public function edit_matakuliah()
 	{
 		$data['judul'] = 'Edit Matakuliah';
@@ -65,6 +61,30 @@ class admin_controller extends CI_Controller
 			echo $this->session->set_flashdata('flash','added success');
 			// redirect('admin/create_matakuliah');
 		}
+	}
+
+	public function delete_matakuliah()
+	{
+		$data['judul'] = 'Delete Matakuliah';
+		$this->form_validation->set_rules('id_matakuliah','nama_matakuliah','required');
+		$this->form_validation->set_rules('id_pengajar','nama_pengajar','required');
+		if ($this->form_validation->run() == false){
+			$this->load->view('admin/delete_matakuliah', $data);
+			$this->session->set_flashdata('flash_add','Delete failed');
+		}else{
+			$this->admin_model->delete_matakuliah();
+			$this->session->set_flashdata('flash_add','Delete success');
+			// redirect('/create_matakuliah');
+			$this->load->view('admin/delete_matakuliah', $data);
+			echo $this->session->set_flashdata('flash','Delete success');
+			// redirect('admin/create_matakuliah');
+		}
+	}
+
+	// ---------------------------------------------------------------------------------------------------
+
+	public function input_materi() {
+		$this->load->view('Pengajar/input_materi');
 	}
 
 	public function view_pengajar()

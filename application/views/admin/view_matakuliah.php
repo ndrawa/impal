@@ -16,7 +16,38 @@
     <div class="row">
       <div class="col">
       <p class="h5 text-center mb-4">View Matakuliah</p>
-        <p> Matakuliah kosong </p>
+		<table class="table mt-5" border="1">
+		  <tbody>
+
+			    <tr class="table-active">
+			      <td>No</td>
+			      <td>Matakuliah</td>
+			      <td>ID Matkul</td>
+			      <td>Pengajar</td>
+			      <td>ID Pengajar</td>
+			    </tr>
+				<tr>
+			    	<td>1</td>
+			        <td> Rezim Sisca Kohl</td>
+			    	<td> RSK</td>		
+			    	<td> Prioga Sugeng Aditya</td>		
+			        <td> PSA</td>
+			    </tr>
+			    <!-- <?php foreach($pengajar as $pgr): ?>
+			    <tr>
+			    	<td>1</td>
+			    	<td> <?= $pgr['nama'] ;?></td>		
+			        <td> <?= $pgr['kode_pengajar'] ;?></td>
+			        <td> <?= $pgr['nama_matakuliah'] ;?></td>
+			        <td> <?= $pgr['kode_matakuliah'] ;?></td>
+			        
+			    </tr> -->
+			    <tr>
+			    	
+			    </tr>
+			    <!-- <?php endforeach; ?> -->
+		   </tbody>
+		</table> 
       </div>
     </div>
     </div>    
