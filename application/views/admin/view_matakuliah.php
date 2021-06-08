@@ -26,26 +26,25 @@
 			      <td>Pengajar</td>
 			      <td>ID Pengajar</td>
 			    </tr>
-				<tr>
+				<!-- <tr>
 			    	<td>1</td>
 			        <td> Rezim Sisca Kohl</td>
 			    	<td> RSK</td>		
 			    	<td> Priyoga Sugeng Aditya</td>		
 			        <td> PSA</td>
-			    </tr>
-			    <!-- <?php foreach($pengajar as $pgr): ?>
+			    </tr> -->
+			    <?php foreach($matakuliah as $matkul): ?>
 			    <tr>
 			    	<td>1</td>
-			    	<td> <?= $pgr['nama'] ;?></td>		
-			        <td> <?= $pgr['kode_pengajar'] ;?></td>
-			        <td> <?= $pgr['nama_matakuliah'] ;?></td>
-			        <td> <?= $pgr['kode_matakuliah'] ;?></td>
-			        
-			    </tr> -->
+			        <td> <?= $matkul['nama_matakuliah'] ;?></td>
+			        <td> <?= $matkul['kode_matakuliah'] ;?></td>
+			    	<td> <?= $matkul['nama'] ;?></td>		
+			        <td> <?= $matkul['kode_pengajar'] ;?></td>
+			    </tr>
 			    <tr>
 			    	
 			    </tr>
-			    <!-- <?php endforeach; ?> -->
+			    <?php endforeach; ?>
 		   </tbody>
 		</table> 
       </div>

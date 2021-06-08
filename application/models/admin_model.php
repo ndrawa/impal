@@ -42,7 +42,12 @@
 			return $query;
 		}
 
-		public function getall_pengajar()
+		public function get_matkul_by_id()
+		{
+			
+		}
+
+		public function get_all_matakuliah()
 		{
 			$result = $this->db->query("SELECT pengajar.nama , pengajar.kode_pengajar, matakuliah.nama_matakuliah ,
 										matakuliah.kode_matakuliah

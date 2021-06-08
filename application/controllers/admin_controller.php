@@ -78,7 +78,8 @@ class admin_controller extends CI_Controller
 
 	public function view_matakuliah()
 	{
-		$this->load->view('admin/view_matakuliah');
+		$data['matakuliah'] = $this->admin_model->get_all_matakuliah();
+		$this->load->view('admin/view_matakuliah', $data);
 	}
 
 	// ---------------------------------------------------------------------------------------------------
