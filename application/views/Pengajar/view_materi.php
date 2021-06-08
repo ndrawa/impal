@@ -14,7 +14,7 @@
 
     <h1> View Materi </h1>
 
-    <form class="form-control" action="<?= site_url('pengajar_controller/view_materi/');?>" method="post">
+    <form class="form-control" method="post">
 	    <div class="form-group">
 	    	<p> Pilih mata kuliah yang ingin dilihat materinya 
 		    <select class="form-select" aria-label="Default select example" name="id_matakuliah" onchange="tampil_materi();">
