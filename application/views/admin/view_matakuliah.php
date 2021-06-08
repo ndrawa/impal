@@ -33,9 +33,10 @@
 			    	<td> Priyoga Sugeng Aditya</td>		
 			        <td> PSA</td>
 			    </tr> -->
-			    <?php foreach($matakuliah as $matkul): ?>
+				
+			    <?php $i=1;  foreach($matakuliah as $matkul): ?>
 			    <tr>
-			    	<td>1</td>
+			    	<td> <?= $i++ ;?></td>
 			        <td> <?= $matkul['nama_matakuliah'] ;?></td>
 			        <td> <?= $matkul['kode_matakuliah'] ;?></td>
 			    	<td> <?= $matkul['nama'] ;?></td>		
