@@ -59,10 +59,4 @@
   	<p id="space_materi"> </p>
 </body>
 
-<script>
-	function tampil_materi() {
-		var nama_matkul = document.getElementById("id_matakuliah").value;
-		document.getElementById("space_materi").innerHTML = "hai";
-	}
-</script>
 </html>
