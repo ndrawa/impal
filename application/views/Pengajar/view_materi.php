@@ -26,7 +26,6 @@
 				<?php } ?>
 			</select>
 			<button type="submit" class="btn btn-primary"> Tampilkan materi </button> </p>
-			</p>
 	  	</div>
 	</form>
 

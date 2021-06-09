@@ -25,6 +25,7 @@
 	            	echo $this->session->flashdata('flash_add'); ?>
 	            </div>
 	        <?php } ?>
+
 		  	<div class="form-group">
 			    <select class="form-select" aria-label="Default select example" name="id_matakuliah">
 					<option selected> Select - Mata kuliah</option>
@@ -35,7 +36,7 @@
 					<?php } ?>
 				</select>
 		  	</div>
-			 <div class="form-group" >
+			<div class="form-group" >
 			    <input type="text" class="form-control" id="id_materi" name="id_materi" placeholder="ID Materi">
 		  	</div>
 
