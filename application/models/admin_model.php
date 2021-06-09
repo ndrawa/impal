@@ -11,6 +11,28 @@
 			$this->db->insert('matakuliah',$data);
 		}
 
+		public function edit_matakuliah()
+		{
+			$data = [
+				"kode_matakuliah" => $this->input->post('id_matakuliah'),
+				"kode_pengajar" => $this->input->post('id_pengajar', true),
+				"nama_matakuliah" => $this->input->post('nama_matakuliah', true),
+			];
+			$this->db->where('kode_matakuliah', $data['kode_matakuliah']);
+			$this->db->update('matakuliah',$data);
+		}
+
+		public function delete_matakuliah()
+		{
+			$data = [
+				"kode_matakuliah" => $this->input->post('id_matakuliah'),
+				"kode_pengajar" => $this->input->post('id_pengajar', true),
+				"nama_matakuliah" => $this->input->post('nama_matakuliah', true),
+			];
+			$this->db->where('kode_matakuliah', $data['kode_matakuliah']);
+			$this->db->delete('matakuliah');
+		}
+
 		public function cari_idmatkul()
 		{
 			$this->db->select('kode_matakuliah, kode_pengajar, nama_matakuliah');
@@ -20,7 +42,12 @@
 			return $query;
 		}
 
-		public function getall_pengajar()
+		public function get_matkul_by_id()
+		{
+			
+		}
+
+		public function get_all_matakuliah()
 		{
 			$result = $this->db->query("SELECT pengajar.nama , pengajar.kode_pengajar, matakuliah.nama_matakuliah ,
 										matakuliah.kode_matakuliah

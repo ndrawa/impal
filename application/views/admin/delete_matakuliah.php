@@ -8,34 +8,34 @@
 </head>
 <body>
     <?php 
-			$this->load->view('template/navbar');
+      $this->load->view('template/navbar');
       $this->load->view('template/back');
-		?>
+    ?>
 		</div>
     <div class="container">
     <div class="row">
       <div class="col">
-      <p class="h5 text-center mb-4">Create Matakuliah</p>
-        <form class="form-control" action="" method="post" id="creatematakuliah">
-          <label for="defaultFormRegisterEmailEx" class="grey-text">Nama MataKuliah</label>
+      <p class="h5 text-center mb-4">Delete Matakuliah</p>
+        <form class="form-control" action="" method="post" id="deletematakuliah">
+          <label for="defaultFormRegisterNameEx" class="grey-text">ID MataKuliah</label>
           <?php if($this->session->flashdata('flash_add')){ ?>
             <div class="alert alert-success alert-dismissible fade show" role="alert">
               <?= $this->session->flashdata('flash_add')?>
             </div>
           <?php }?>
-          <input type="text" id="nama_matakuliah" name="nama_matakuliah" class="form-control"/>
-          <br/>
-          <label for="defaultFormRegisterNameEx" class="grey-text">ID MataKuliah</label>
           <input type="text" id="id_matakuliah" name="id_matakuliah"  class="form-control"/>
           <br/>
-          <label for="defaultFormRegisterPasswordEx" class="grey-text">Nama Pengajar</label>
-          <input type="text" id="nama_pengajar" name="nama_pengajar" class="form-control"/>
+          <label for="defaultFormRegisterEmailEx" class="grey-text">Nama MataKuliah</label>
+          <input type="text" id="nama_matakuliah" name="nama_matakuliah" class="form-control"/>
           <br/>
           <label for="defaultFormRegisterConfirmEx" class="grey-text">ID Pengajar</label>
           <input type="text" id="id_pengajar" name="id_pengajar" class="form-control"/>
           <br/>
+          <label for="defaultFormRegisterPasswordEx" class="grey-text">Nama Pengajar</label>
+          <input type="text" id="nama_pengajar" name="nama_pengajar" class="form-control"/>
+          <br/>
           <div class="text-center mt-3">
-            <button class="btn btn-unique" type="submit" name="tambah">Save</button>
+            <button class="btn btn-unique" type="submit" name="tambah">Delete</button>
           </div>
         </form>
       </div>
