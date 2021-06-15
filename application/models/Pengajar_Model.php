@@ -16,6 +16,11 @@ class pengajar_model extends CI_Model
 		return $query->result_array();
 	}
 
+	function get_matkul_all(){
+		$query = $this->db->query("SELECT kode_matakuliah, nama_matakuliah FROM matakuliah");
+		return $query->result_array();
+	}
+
 	function create_materi(){
 		$data = [
 			"kode_materi" => $this->input->post('id_materi', true),
@@ -31,6 +36,18 @@ class pengajar_model extends CI_Model
 			$query = $this->db->query("SELECT kode_materi, nama_materi, nama_matakuliah FROM materi 
 				INNER JOIN matakuliah ON matakuliah.kode_matakuliah=materi.kode_matakuliah
 				WHERE matakuliah.kode_pengajar='$pengajar' AND materi.kode_matakuliah='$kode_matkul'");
+			return $query->result_array();
+		} else {
+			return NULL;
+		}
+	}
+
+	function get_materi_all() {
+		$kode_matkul = $this->input->post('id_matakuliah');
+		if ($kode_matkul != "") {
+			$query = $this->db->query("SELECT kode_materi, nama_materi, nama_matakuliah FROM materi 
+				INNER JOIN matakuliah ON matakuliah.kode_matakuliah=materi.kode_matakuliah
+				WHERE materi.kode_matakuliah='$kode_matkul'");
 			return $query->result_array();
 		} else {
 			return NULL;

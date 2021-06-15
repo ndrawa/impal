@@ -9,7 +9,7 @@
 <body>
     <?php 
         $this->load->view('template/navbar');
-        $this->load->view('template/back');
+        $this->load->view('template/backmatakuliah');
     ?>
 
     <div class="container">
@@ -37,10 +37,10 @@
 			    <?php $i=1;  foreach($matakuliah as $matkul): ?>
 			    <tr>
 			    	<td> <?= $i++ ;?></td>
-			        <td> <?= $matkul['nama_matakuliah'] ;?></td>
-			        <td> <?= $matkul['kode_matakuliah'] ;?></td>
-			    	<td> <?= $matkul['nama'] ;?></td>		
-			        <td> <?= $matkul['kode_pengajar'] ;?></td>
+			        <td> <?= $matkul->nama_matakuliah;?></td>
+			        <td> <?= $matkul->kode_matakuliah;?></td>
+			    	<td> <?= $matkul->nama;?></td>		
+			        <td> <?= $matkul->kode_pengajar;?></td>
 			    </tr>
 			    <tr>
 			    	

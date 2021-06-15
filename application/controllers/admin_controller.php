@@ -5,6 +5,7 @@ class admin_controller extends CI_Controller
 	{
 		parent::__construct();
 		$this->load->model('admin_model');
+		$this->load->model('pengajar_model');
 		$this->load->library('form_validation');
 	}
         
@@ -21,6 +22,10 @@ class admin_controller extends CI_Controller
 	}
 
 	//======================================C untuk menampilkan view========================================
+	public function kelola_matakuliah()
+	{
+		$this->load->view('admin/kelola_matakuliah');
+	}
 	
 	public function create_matakuliah()
 	{
@@ -43,6 +48,7 @@ class admin_controller extends CI_Controller
 	public function edit_matakuliah()
 	{
 		$data['judul'] = 'Edit Matakuliah';
+		$data['matakuliah'] = $this->admin_model->get_all_matakuliah();
 		$this->form_validation->set_rules('id_matakuliah','nama_matakuliah','required');
 		$this->form_validation->set_rules('id_pengajar','nama_pengajar','required');
 		if ($this->form_validation->run() == false){
@@ -61,6 +67,7 @@ class admin_controller extends CI_Controller
 	public function delete_matakuliah()
 	{
 		$data['judul'] = 'Delete Matakuliah';
+		$data['matakuliah'] = $this->admin_model->get_all_matakuliah();
 		$this->form_validation->set_rules('id_matakuliah','nama_matakuliah','required');
 		$this->form_validation->set_rules('id_pengajar','nama_pengajar','required');
 		if ($this->form_validation->run() == false){
@@ -88,6 +95,15 @@ class admin_controller extends CI_Controller
 		$this->load->view('Pengajar/input_materi');
 	}
 
+	public function view_materi() {
+		$data['data_matkul'] = $this->pengajar_model->get_matkul_all();
+		$data['data_materi'] = $this->pengajar_model->get_materi_all();
+		$this->load->view('Pengajar/view_materi', $data);
+	}
+
+	// ---------------------------------------------------------------------------------------------------
+	
+
 	public function view_pengajar()
 	{
 		$data['judul'] = 'View Pengajar';
@@ -106,20 +122,6 @@ class admin_controller extends CI_Controller
 		$this->load->view('admin/edit_matakuliah',$data);
 	}
 
-	public function V_Ubah(){
-		$this->load->view('Dokter/V_ubah',);
-	}
-
-	public function V_lihatJadwalKosong()
-	{
-		$data['jadwal_kosong'] = $this->M_Dokter->getJadwalKosongByUsername();
-		$this->load->view('Dokter/V_lihatJadwalKosong', $data);
-	}
-	
-	public function V_hapus()
-	{
-		$this->load->view('Dokter/V_hapus',);
-	}
 
 	//======================================C untuk ke model========================================
 

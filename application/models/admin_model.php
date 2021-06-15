@@ -49,10 +49,10 @@
 
 		public function get_all_matakuliah()
 		{
-			$result = $this->db->query("SELECT pengajar.nama , pengajar.kode_pengajar, matakuliah.nama_matakuliah ,
+			$query = $this->db->query("SELECT pengajar.nama , pengajar.kode_pengajar, matakuliah.nama_matakuliah ,
 										matakuliah.kode_matakuliah
 									   FROM pengajar
 									   join matakuliah on matakuliah.kode_pengajar = pengajar.kode_pengajar;");
-       		return $result->result_array();
+       		return $query->result();
 		}
 	}

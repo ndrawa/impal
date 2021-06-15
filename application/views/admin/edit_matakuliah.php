@@ -9,7 +9,7 @@
 <body>
     <?php 
         $this->load->view('template/navbar');
-        $this->load->view('template/back');
+        $this->load->view('template/backmatakuliah');
     ?>
 		</div>
     <div class="container">
@@ -18,6 +18,14 @@
       <p class="h5 text-center mb-4">Edit Matakuliah</p>
         <form class="form-control" action="" method="post" id="editmatakuliah">
           <label for="defaultFormRegisterNameEx" class="grey-text">ID MataKuliah</label>
+          <!-- <select class="form-control" id="id_matakuliah" name="id_matakuliah">
+            <?php 
+            foreach($matakuliah as $row)
+            { 
+              echo '<option value="'.$row->kode_matakuliah.'">'.$row->kode_matakuliah.'</option>';
+            }
+            ?>
+          </select> -->
           <?php if($this->session->flashdata('flash_add')){ ?>
             <div class="alert alert-success alert-dismissible fade show" role="alert">
               <?= $this->session->flashdata('flash_add')?>
@@ -32,6 +40,7 @@
           <input type="text" id="id_pengajar" name="id_pengajar" class="form-control"/>
           <br/>
           <label for="defaultFormRegisterPasswordEx" class="grey-text">Nama Pengajar</label>
+          <!-- <input type="text" id="nama_pengajar" name="nama_pengajar" class="form-control" value="<?php echo $row->nama;?>" disabled/> -->
           <input type="text" id="nama_pengajar" name="nama_pengajar" class="form-control"/>
           <br/>
           <div class="text-center mt-3">
