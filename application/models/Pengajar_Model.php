@@ -45,4 +45,13 @@ class pengajar_model extends CI_Model
 		   return $result->result_array();
 	}
 
+	function delete_materi(){
+		$data = [
+				"kode_materi" => $this->input->post('id_materi'),
+				"nama_materi" => $this->input->post('nama_materi', true),
+			];
+			$this->db->where('kode_materi', $data['kode_materi']);
+			$this->db->delete('materi');
+	}
+
 }

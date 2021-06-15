@@ -41,4 +41,21 @@ class pengajar_controller extends CI_Controller
 		$data['pengajar'] = $this->pengajar_model->getall_pengajar();
 		$this->load->view('Pengajar/view_pengajar',$data);
 	}
+
+	public function delete_materi(){
+		$data['judul'] = 'Delete Materi';
+		$this->form_validation->set_rules('id_materi','nama_materi','required');
+		if ($this->form_validation->run() == false){
+			$this->load->view('pengajar/delete_materi', $data);
+			$this->session->set_flashdata('flash_add','Delete failed');
+		}else{
+			$this->pengajar_model->delete_materi();
+			$this->session->set_flashdata('flash_add','Delete success');
+			// redirect('/create_matakuliah');
+			$this->load->view('pengajar/delete_materi', $data);
+			echo $this->session->set_flashdata('flash','Delete success');
+			// redirect('admin/create_matakuliah');
+		}
+	}
+	
 }
