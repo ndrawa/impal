@@ -109,9 +109,6 @@ class admin_controller extends CI_Controller
 		$data['judul'] = 'View Pengajar';
 		$data['pengajar'] = $this->admin_model->getall_pengajar();
 		$this->load->view('admin/view_pengajar',$data);
-		
-
-
 	}
 
 
