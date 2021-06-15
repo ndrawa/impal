@@ -35,4 +35,10 @@ class pengajar_controller extends CI_Controller
 	public function fetch_materi($kode_matkul) {
 
 	}
+	
+	public function view_pengajar(){
+		$data['judul'] = 'View Pengajar';
+		$data['pengajar'] = $this->pengajar_model->getall_pengajar();
+		$this->load->view('Pengajar/view_pengajar',$data);
+	}
 }
