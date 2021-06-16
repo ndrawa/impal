@@ -10,6 +10,9 @@
     <?php 
         $this->load->view('template/navbar');
         // $this->load->view('template/backmatakuliah');
+		if ($_SESSION['session_login'] == 'admin') {
+			$this->load->view('template/backmatakuliah');
+		}
     ?>
 
     <div class="container">
