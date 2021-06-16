@@ -32,6 +32,23 @@ class pengajar_controller extends CI_Controller
 		$this->load->view('Pengajar/view_materi', $data);
 	}
 
+	public function edit_materi()
+	{
+		$data['judul'] = 'Edit Materi';
+		$this->form_validation->set_rules('id_materi','nama_materi','required');
+		if ($this->form_validation->run() == false){
+			$this->load->view('pengajar/edit_materi', $data);
+			$this->session->set_flashdata('flash_add','Update failed');
+		}else{
+			$this->pengajar_model->edit_materi();
+			$this->session->set_flashdata('flash_add','Update success');
+			// redirect('/create_matakuliah');
+			$this->load->view('pengajar/edit_materi', $data);
+			echo $this->session->set_flashdata('flash','Update success');
+			// redirect('admin/create_matakuliah');
+		}
+	}
+	
 	public function fetch_materi($kode_matkul) {
 
 	}

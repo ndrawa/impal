@@ -16,10 +16,13 @@ class pengajar_model extends CI_Model
 		return $query->result_array();
 	}
 
+
 	function get_matkul_all(){
 		$query = $this->db->query("SELECT kode_matakuliah, nama_matakuliah FROM matakuliah");
 		return $query->result_array();
 	}
+
+
 
 	function create_materi(){
 		$data = [
@@ -28,6 +31,17 @@ class pengajar_model extends CI_Model
 			"nama_materi" => $this->input->post('nama_materi', true),
 		];
 		$this->db->insert('materi',$data);
+	}
+
+	public function edit_materi()
+	{
+		$data = [
+			"kode_matakuliah" => $this->input->post('id_matakuliah'),
+			"kode_materi" => $this->input->post('id_materi', true),
+			"nama_materi" => $this->input->post('nama_materi', true),
+		];
+		$this->db->where('kode_materi', $data['kode_materi']);
+		$this->db->update('materi',$data);
 	}
 
 	function get_materi($pengajar) {
@@ -69,6 +83,15 @@ class pengajar_model extends CI_Model
 			];
 			$this->db->where('kode_materi', $data['kode_materi']);
 			$this->db->delete('materi');
+	}
+
+	public function ubahMateri($data)
+	{
+		$query = "UPDATE materi SET 
+									kode_materi = '".$data['kode_materi']."',
+									nama_materi = '".$data['nama_materi']."'
+				  WHERE kode_ma = ".$data['idjadwal'];
+		return $this->db->query($query);
 	}
 
 }
