@@ -9,7 +9,7 @@
 <body>
     <?php 
         $this->load->view('template/navbar');
-        $this->load->view('template/backmatakuliah');
+        // $this->load->view('template/backmatakuliah');
     ?>
 
     <div class="container">
