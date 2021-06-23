@@ -16,5 +16,6 @@
 	<a href="<?= site_url('pengajar_controller/view_materi/'); ?>">View Materi </a>
 	<a href="<?= site_url('pengajar_controller/delete_materi/'); ?>">Delete Materi </a>
 	<a href="<?= site_url('pengajar_controller/edit_materi/'); ?>">Edit Materi </a>
+	
 </body>
 </html>

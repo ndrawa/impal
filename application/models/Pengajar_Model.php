@@ -24,13 +24,13 @@ class pengajar_model extends CI_Model
 
 
 
-	function create_materi($file){
+	function create_materi($file_materi){
 		$data = [
 			"kode_materi" => $this->input->post('id_materi', true),
 			"kode_matakuliah" => $this->input->post('id_matakuliah'),
 			"nama_materi" => $this->input->post('nama_materi', true),
-			"file_path" => $file['path'],
-			"file_name" => $file['name'],
+			//"file_path" => $file['path'],
+			"file_materi" => $file_materi,
 		];
 		$this->db->insert('materi',$data);
 	}
@@ -49,7 +49,7 @@ class pengajar_model extends CI_Model
 	function get_materi($pengajar) {
 		$kode_matkul = $this->input->post('id_matakuliah');
 		if ($kode_matkul != "") {
-			$query = $this->db->query("SELECT kode_materi, nama_materi, nama_matakuliah, file_name, file_path FROM materi 
+			$query = $this->db->query("SELECT kode_materi, nama_materi, nama_matakuliah, file_materi FROM materi 
 				INNER JOIN matakuliah ON matakuliah.kode_matakuliah=materi.kode_matakuliah
 				WHERE matakuliah.kode_pengajar='$pengajar' AND materi.kode_matakuliah='$kode_matkul'");
 			return $query->result_array();

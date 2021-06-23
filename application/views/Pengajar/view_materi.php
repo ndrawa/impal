@@ -47,10 +47,10 @@
 				<?php foreach ($data_materi as $materi) {
 					$idx = $idx + 1;
 					echo "<tr>";
-					echo "<th align=\"center\">".$idx."</th>";
-					echo "<td align=\"center\">".$materi['kode_materi']."</td>";
-					echo "<td align=\"center\">".$materi['nama_materi']."</td>";
-					echo "<td align=\"center\"> <a href=".$materi['file_path']." download=".$materi['file_name']."> Buka file </a> </td>";
+					echo "<th>".$idx."</th>";
+					echo "<td>".$materi['kode_materi']."</td>";
+					echo "<td>".$materi['nama_materi']."</td>";
+					echo "<td> <a href=\"".base_url()."upload/".$materi['file_materi']."\" download> Buka file </a> </td>";
 					echo "</tr>";
 				} ?>
 			</tbody>
