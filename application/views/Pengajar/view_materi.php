@@ -50,7 +50,7 @@
 					echo "<th>".$idx."</th>";
 					echo "<td>".$materi['kode_materi']."</td>";
 					echo "<td>".$materi['nama_materi']."</td>";
-					echo "<td> <a href=\"".base_url()."upload/".$materi['file_materi']."\" download> Buka file </a> </td>";
+					echo "<td> <a href=\"".base_url()."upload/".$materi['file_materi']."\" download> Download materi </a> </td>";
 					echo "</tr>";
 				} ?>
 			</tbody>

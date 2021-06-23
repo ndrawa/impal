@@ -96,8 +96,8 @@ class admin_controller extends CI_Controller
 	}
 
 	public function view_materi() {
-		$data['data_matkul'] = $this->pengajar_model->get_matkul_all();
-		$data['data_materi'] = $this->pengajar_model->get_materi_all();
+		$data['data_matkul'] = $this->admin_model->get_matkul();
+		$data['data_materi'] = $this->admin_model->get_materi();
 		$this->load->view('Pengajar/view_materi', $data);
 	}
 
