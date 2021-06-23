@@ -10,7 +10,6 @@
 
 	<?php 
 		$this->load->view('template/navbar');
-  		$this->load->view('template/back');
 	?>
 
 	<h1> Lihat Materi </h1>

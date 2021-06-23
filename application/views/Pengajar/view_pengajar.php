@@ -9,7 +9,6 @@
 	<body>
 		<?php 
 			$this->load->view('template/navbar');
-	        $this->load->view('template/back');
 		?>
 		<p class="h5 text-center mb-4">Tabel Pengajar</p>
 		<div style="width:1200px; margin: auto;">

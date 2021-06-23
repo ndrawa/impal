@@ -1,0 +1,2 @@
+buat desain mockup untuk kategori (terdiri dari lokasi dan pilihannya sovenir/kuliner)
+buat icon toko default (toko belum ada gambar)

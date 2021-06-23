@@ -9,11 +9,11 @@
 <body>
 	<?php 
         $this->load->view('template/navbar');
-        $this->load->view('template/back');
     ?>
     <h3 style="text-align: center;"> Input Materi </h3>
     <div style="margin:0 auto; width:500px;">
-		<form class="form-control" action="" method="post">
+		<!-- <form class="form-control" action="" method="post"> -->
+			<?php echo form_open_multipart('pengajar_controller/input_materi');?>
 			<?php if($this->session->flashdata('flash_add') == 'success'){ ?>
 	            <div class="alert alert-success alert-dismissible fade show" role="alert">
 	            	<?php echo $this->session->set_flashdata('flash_add','Data materi berhasil ditambahkan');
@@ -25,6 +25,7 @@
 	            	echo $this->session->flashdata('flash_add'); ?>
 	            </div>
 	        <?php } ?>
+
 		  	<div class="form-group">
 			    <select class="form-select" aria-label="Default select example" name="id_matakuliah">
 					<option selected> Select - Mata kuliah</option>
@@ -41,6 +42,10 @@
 
 		  	<div class="form-group" >
 			    <input type="text" class="form-control" id="nama_materi" name="nama_materi" placeholder="Nama Materi">
+		  	</div>
+
+		  	<div class="form-group">
+		  		<input type="file" id="file_materi" name="file_materi">
 		  	</div>
 
 		  	<!-- <div class="form-group" >
