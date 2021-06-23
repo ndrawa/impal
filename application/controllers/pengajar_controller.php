@@ -6,6 +6,7 @@ class pengajar_controller extends CI_Controller
 		parent::__construct();
 		$this->load->model('pengajar_model');
 		$this->load->library('form_validation');
+		$this->load->library('user_agent');
 	}
 
 	public function input_materi() {
@@ -24,8 +25,9 @@ class pengajar_controller extends CI_Controller
 			$config['max_size']			= 1024;
 			$this->load->library('upload', $config);
 			if ( $this->upload->do_upload('file_materi')){
-				$path_file = $this->upload->data('full_path');
-				$this->pengajar_model->create_materi($path_file);
+				$file['path'] = $this->upload->data('full_path');
+				$file['name'] = $this->upload->data('file_name');
+				$this->pengajar_model->create_materi($file);
 				$this->session->set_flashdata('flash_add','success');
 				$this->load->view('Pengajar/input_materi',$data);
 			}else{
@@ -84,5 +86,25 @@ class pengajar_controller extends CI_Controller
 			// redirect('admin/create_matakuliah');
 		}
 	}
-	
+
+	public function download_materi($filename = NULL) {
+		if ($filename) {
+			//$file = realpath ( "download" ) . "\\" . $fileName;
+			// check file exists  
+			$file_path = 'C:/xampp/htdocs/impal/upload/meet_2.txt';  
+			if (file_exists ( $file_path )) {
+				// get file content
+				$data = file_get_contents ( $file_path );
+				//force download
+				force_download ( $filename, $data );
+			} else {
+				// Redirect to base url
+				// if ($this->agent->is_referral())
+				// {
+				//     echo $this->agent->referrer();
+				// }
+				//redirect ( base_url () );
+    		}
+		}
+	}
 }
