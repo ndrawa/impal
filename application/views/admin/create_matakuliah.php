@@ -16,13 +16,20 @@
     <div class="row">
       <div class="col">
       <p class="h5 text-center mb-4">Create Matakuliah</p>
+      <?php if($this->session->flashdata('flash_add') == 'success'){ ?>
+          <div class="alert alert-success alert-dismissible fade show" role="alert">
+            <?php echo $this->session->set_flashdata('flash_add','Data berhasil ditambahkan');
+            echo $this->session->flashdata('flash_add'); ?>
+          </div>
+        <?php } else if ($this->session->flashdata('flash_add') == 'failed') { ?>
+          <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            <?php echo $this->session->set_flashdata('flash_add','Data gagal ditambahkan');
+            echo $this->session->flashdata('flash_add'); ?>
+          </div>
+      <?php } ?>
+      
         <form class="form-control" action="" method="post" id="creatematakuliah">
           <label for="defaultFormRegisterEmailEx" class="grey-text">Nama MataKuliah</label>
-          <?php if($this->session->flashdata('flash_add')){ ?>
-            <div class="alert alert-success alert-dismissible fade show" role="alert">
-              <?= $this->session->flashdata('flash_add')?>
-            </div>
-          <?php }?>
           <input type="text" id="nama_matakuliah" name="nama_matakuliah" class="form-control"/>
           <br/>
           <label for="defaultFormRegisterNameEx" class="grey-text">ID MataKuliah</label>

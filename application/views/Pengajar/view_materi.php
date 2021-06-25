@@ -4,18 +4,16 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 	<link type="text/css" rel="stylesheet" href="<?php echo base_url('assets/css/style.css'); ?>"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-	<title> View Materi </title>
 </head>
 <body>
 	<?php 
         $this->load->view('template/navbar');
     ?>
 
-    <h1> View Materi </h1>
-
-    <form class="form-control" method="post">
-	    <div class="form-group">
-	    	<p> Pilih mata kuliah yang ingin dilihat materinya 
+    <div style="width:600px; margin: 20px auto;">
+    	<h2 align="center"> View Materi </h2>
+	    <form class="form-control" method="post">
+	    	<p align="center"> Pilih mata kuliah 
 		    <select class="form-select" aria-label="Default select example" name="id_matakuliah" onchange="tampil_materi();">
 				<option selected> Select - Mata kuliah</option>
 				<?php
@@ -26,13 +24,13 @@
 			</select>
 			<button type="submit" class="btn btn-primary"> Tampilkan materi </button> </p>
 			</p>
-	  	</div>
-	</form>
+		</form>
+	</div>
 
 	<div style="width:1000px; margin: auto;">
 	<?php if ($data_materi) {
 		$idx = 0; ?>
-		<strong> Mata kuliah terpilih: <?= $data_materi[0]['nama_matakuliah']; ?></strong>
+		<div style="margin-top: 20px;" align="center"> <strong> Tabel Materi - <?= $data_materi[0]['nama_matakuliah']; ?></strong> </div>
 		<table class="table mt-5 table-bordered table-hover" >
 	  		<thead class="thead-dark">
 	  			<tr>
@@ -40,6 +38,7 @@
 	  				<th scope="col" align="center"> Kode Materi </th>
 	  				<th scope="col" align="center"> Nama Materi </th>
 	  				<th scope="col" align="center" width="30%"> File Materi </th>
+	  				<!-- <th scope="col" align="center" width="20%"> Action </th> -->
 	  			</tr>
 	  		</thead>
 
@@ -51,6 +50,10 @@
 					echo "<td>".$materi['kode_materi']."</td>";
 					echo "<td>".$materi['nama_materi']."</td>";
 					echo "<td> <a href=\"".base_url()."upload/".$materi['file_materi']."\" download> Download materi </a> </td>";
+					/*echo "<td align=\"center\"> 
+							<button type=\"button\" class=\"btn btn-danger\"> <img src=\"".base_url()."assets/icon/trash.svg\"> Delete </button> 
+							<button type=\"button\" class=\"btn btn-warning\"> <img src=\"".base_url()."assets/icon/edit.svg\"> Edit </button> 
+						</td>";*/
 					echo "</tr>";
 				} ?>
 			</tbody>

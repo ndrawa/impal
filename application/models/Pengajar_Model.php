@@ -22,14 +22,11 @@ class pengajar_model extends CI_Model
 		return $query->result_array();
 	}
 
-
-
 	function create_materi($file_materi){
 		$data = [
 			"kode_materi" => $this->input->post('id_materi', true),
 			"kode_matakuliah" => $this->input->post('id_matakuliah'),
 			"nama_materi" => $this->input->post('nama_materi', true),
-			//"file_path" => $file['path'],
 			"file_materi" => $file_materi,
 		];
 		$this->db->insert('materi',$data);
@@ -87,13 +84,13 @@ class pengajar_model extends CI_Model
 			$this->db->delete('materi');
 	}
 
-	public function ubahMateri($data)
+	/*public function ubahMateri($data)
 	{
 		$query = "UPDATE materi SET 
 									kode_materi = '".$data['kode_materi']."',
 									nama_materi = '".$data['nama_materi']."'
 				  WHERE kode_ma = ".$data['idjadwal'];
 		return $this->db->query($query);
-	}
+	} */
 
 }

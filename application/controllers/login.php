@@ -38,14 +38,8 @@ class login extends CI_controller {
             if($username=='admin' && $password=='admin'){
                 $this->session->set_userdata('session_login','admin');
                 $this->load->view('admin/index');
-                // $id_matakuliah=$this->input->post('id_matakuliah');
-                // $nama_matakuliah=$this->input->post('nama_matakuliah');
-                // $id_pengajar=$this->input->post('id_pengajar');
-                // $test = $this->admin_model->create_matakuliah($id_matakuliah,$nama_matakuliah,$id_pengajar);
-
-                // $this->load->view('template/footer'); 
             }else{
-                if($cek_pelajar->num_rows() > 0){ //jika login sebagai 
+                if($cek_pelajar->num_rows() > 0){                       //jika login sebagai pelajar
                     $data=$cek_pelajar->row_array();
                     $this->session->set_userdata('session_login','pelajar');
                     $this->session->set_userdata('session_nama',$data['nama']);
@@ -53,7 +47,7 @@ class login extends CI_controller {
                     $this->session->set_userdata('session_password',$data['password']);
                     $this->session->set_userdata('session_status','pelajar');
                     $this->load->view('pelajar/pelajar_view', $data);
-                }else if($cek_pengajar->num_rows() > 0){ //jika login sebagai pengajar
+                }else if($cek_pengajar->num_rows() > 0){                //jika login sebagai pengajar
                     $data=$cek_pengajar->row_array();
                     $this->session->set_userdata('session_login','pengajar');
                     $this->session->set_userdata('session_nama',$data['nama']);

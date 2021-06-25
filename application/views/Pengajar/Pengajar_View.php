@@ -11,11 +11,13 @@
 		$this->load->view('template/navbar');
 	?>
 	
-	<h1>Halaman Pengajar</h1>
-	<a href="<?= site_url('pengajar_controller/input_materi/'); ?>">Input Materi </a>
-	<a href="<?= site_url('pengajar_controller/view_materi/'); ?>">View Materi </a>
-	<a href="<?= site_url('pengajar_controller/delete_materi/'); ?>">Delete Materi </a>
-	<a href="<?= site_url('pengajar_controller/edit_materi/'); ?>">Edit Materi </a>
+	<h3 style="margin:10px;">Selamat datang, Pak <?= $this->session->userdata('session_nama');?> </h3>
+	<div align="center" style="margin: 50px auto;">
+		<a href="<?= site_url('pengajar_controller/input_materi/'); ?>" class="btn btn-primary">Input Materi </a>
+		<a href="<?= site_url('pengajar_controller/view_materi/'); ?>" class="btn btn-primary">View Materi </a>
+		<a href="<?= site_url('pengajar_controller/delete_materi/'); ?>" class="btn btn-primary">Delete Materi </a>
+		<a href="<?= site_url('pengajar_controller/edit_materi/'); ?>" class="btn btn-primary">Edit Materi </a>
+	</div>
 	
 </body>
 </html>

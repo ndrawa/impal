@@ -15,9 +15,9 @@
         <div class="col">
           <p class="h5 text-center mb-4">Halaman Pelajar</p>
           <div class="text-center">
-            <a href="<?= site_url('admin_controller/view_matakuliah/'); ?>">View MataKuliah   </a>
-            <a href="<?= site_url('admin_controller/view_materi/'); ?>">View Materi   </a>
-            <a href="<?= site_url('pengajar_controller/view_pengajar/'); ?>">View Pengajar  </a>
+            <a href="<?= site_url('pelajar_controller/view_matakuliah/'); ?>" class="btn btn-primary">View MataKuliah   </a>
+            <a href="<?= site_url('pelajar_controller/view_materi/'); ?>" class="btn btn-primary">View Materi   </a>
+            <a href="<?= site_url('pelajar_controller/view_pengajar/'); ?>" class="btn btn-primary">View Pengajar  </a>
           </div>
         </div>
       </div>

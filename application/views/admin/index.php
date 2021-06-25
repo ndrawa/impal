@@ -36,10 +36,10 @@ Semua pengolahan data dilakukan pada model dan controller. -->
           <!-- div untuk bagian link -->
           <div class="text-center">
             <!-- Tombol akan membuka ke link halaman yang dituju -->
-            <a href="<?= site_url('admin_controller/kelola_matakuliah/'); ?>">Kelola MataKuliah   </a>
-            <a href="<?= site_url('pengajar_controller/view_pengajar/'); ?>">View Pengajar </a>
-	          <!-- <a href="<?= site_url('pelajar_controller/view_pelajar/'); ?>">View Pelajar </a> -->
-	          <a href="<?= site_url('admin_controller/view_materi/'); ?>">View Materi </a>
+            <a href="<?= site_url('admin_controller/kelola_matakuliah/'); ?>" class="btn btn-primary">Kelola MataKuliah </a>
+            <a href="<?= site_url('pengajar_controller/view_pengajar/'); ?>" class="btn btn-primary">View Pengajar </a>
+	          <!-- <a href="<?= site_url('pelajar_controller/view_pelajar/'); ?>" class="btn btn-primary">View Pelajar </a> -->
+	          <a href="<?= site_url('admin_controller/view_materi/'); ?>" class="btn btn-primary">View Materi </a>
             <!-- <button class="btn btn-unique" onclick="window.location.href='<?= site_url('admin_controller/create_matakuliah/'); ?>'">Crate MataKuliah</button> -->
             <!-- <button class="btn btn-unique" type="submit">Create MataKuliah</button>
             <button class="btn btn-unique" type="submit">Edit MataKuliah</button>
