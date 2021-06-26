@@ -24,14 +24,14 @@ body{
 
 .body{
 	min-height: 100vh;
-	background: url('https://1.bp.blogspot.com/-gMRdmCUIvEA/YIDjGh0IseI/AAAAAAAAGVI/iExLjafieF8zo4ZwTDQhqwfSOW5D7kdRgCLcBGAsYHQ/s1920/anime%2Bbackground%2Bschool.jpg') center;
+	/*background: url('http://localhost/doctorcare/assets/pic/background/bg-1.jpg') center;*/
 }
 #LoginForm{
 	position: absolute;
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%,-50%);
-	background: url('https://1.bp.blogspot.com/-gMRdmCUIvEA/YIDjGh0IseI/AAAAAAAAGVI/iExLjafieF8zo4ZwTDQhqwfSOW5D7kdRgCLcBGAsYHQ/s1920/anime%2Bbackground%2Bschool.jpg') center;
+	/*background: url('http://localhost/doctorcare/assets/pic/background/bg-1.jpg') center;*/
 	box-shadow:0 12px 15px 0 rgba(0,0,0,.24),0 17px 50px 0 rgba(0,0,0,.19);
 	border-radius: 10px;
 	padding: 30px;
