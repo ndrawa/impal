@@ -6,7 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 	<title> Pengajar </title>
 </head>
-<body>
+<body id="pengajarpage">
 	<?php 
 		$this->load->view('template/navbar');
 	?>
