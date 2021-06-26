@@ -16,6 +16,19 @@
     <div class="row">
       <div class="col">
       <p class="h5 text-center mb-4">Edit Matakuliah</p>
+
+        <?php if($this->session->flashdata('flash_add') == 'success'){ ?>
+          <div class="alert alert-success alert-dismissible fade show" role="alert">
+            <?php echo $this->session->set_flashdata('flash_add','Data berhasil diedit');
+            echo $this->session->flashdata('flash_add'); ?>
+          </div>
+          <?php } else if ($this->session->flashdata('flash_add') == 'failed') { ?>
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            <?php echo $this->session->set_flashdata('flash_add','Data gagal diedit');
+            echo $this->session->flashdata('flash_add'); ?>
+          </div>
+        <?php } ?>
+
         <form class="form-control" action="" method="post" id="editmatakuliah">
           <label for="defaultFormRegisterNameEx" class="grey-text">ID MataKuliah</label>
           <!-- <select class="form-control" id="id_matakuliah" name="id_matakuliah">
@@ -26,11 +39,7 @@
             }
             ?>
           </select> -->
-          <?php if($this->session->flashdata('flash_add')){ ?>
-            <div class="alert alert-success alert-dismissible fade show" role="alert">
-              <?= $this->session->flashdata('flash_add')?>
-            </div>
-          <?php }?>
+
           <input type="text" id="id_matakuliah" name="id_matakuliah"  class="form-control"/>
           <br/>
           <label for="defaultFormRegisterEmailEx" class="grey-text">Nama MataKuliah</label>

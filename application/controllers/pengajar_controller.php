@@ -41,13 +41,13 @@ class pengajar_controller extends CI_Controller
 		$this->form_validation->set_rules('id_materi','nama_materi','required');
 		if ($this->form_validation->run() == false){
 			$this->load->view('pengajar/edit_materi', $data);
-			$this->session->set_flashdata('flash_add','Update failed');
+			$this->session->set_flashdata('flash_add','failed');
 		}else{
 			$this->pengajar_model->edit_materi();
-			$this->session->set_flashdata('flash_add','Update success');
+			$this->session->set_flashdata('flash_add','success');
 			// redirect('/create_matakuliah');
 			$this->load->view('pengajar/edit_materi', $data);
-			echo $this->session->set_flashdata('flash','Update success');
+			echo $this->session->set_flashdata('flash','success');
 			// redirect('admin/create_matakuliah');
 		}
 	}
@@ -63,13 +63,13 @@ class pengajar_controller extends CI_Controller
 		$this->form_validation->set_rules('id_materi','nama_materi','required');
 		if ($this->form_validation->run() == false){
 			$this->load->view('pengajar/delete_materi', $data);
-			$this->session->set_flashdata('flash_add','Delete failed');
+			$this->session->set_flashdata('flash_add','failed');
 		}else{
 			$this->pengajar_model->delete_materi();
-			$this->session->set_flashdata('flash_add','Delete success');
+			$this->session->set_flashdata('flash_add','success');
 			// redirect('/create_matakuliah');
 			$this->load->view('pengajar/delete_materi', $data);
-			echo $this->session->set_flashdata('flash','Delete success');
+			echo $this->session->set_flashdata('flash','success');
 			// redirect('admin/create_matakuliah');
 		}
 	}

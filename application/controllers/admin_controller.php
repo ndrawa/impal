@@ -46,13 +46,13 @@ class admin_controller extends CI_Controller
 		$this->form_validation->set_rules('id_pengajar','nama_pengajar','required');
 		if ($this->form_validation->run() == false){
 			$this->load->view('admin/edit_matakuliah', $data);
-			$this->session->set_flashdata('flash_add','Update failed');
+			$this->session->set_flashdata('flash_add','failed');
 		}else{
 			$this->admin_model->edit_matakuliah();
-			$this->session->set_flashdata('flash_add','Update success');
+			$this->session->set_flashdata('flash_add','success');
 			// redirect('/create_matakuliah');
 			$this->load->view('admin/edit_matakuliah', $data);
-			echo $this->session->set_flashdata('flash','Update success');
+			echo $this->session->set_flashdata('flash','success');
 			// redirect('admin/create_matakuliah');
 		}
 	}
@@ -65,13 +65,13 @@ class admin_controller extends CI_Controller
 		$this->form_validation->set_rules('id_pengajar','nama_pengajar','required');
 		if ($this->form_validation->run() == false){
 			$this->load->view('admin/delete_matakuliah', $data);
-			$this->session->set_flashdata('flash_add','Delete failed');
+			$this->session->set_flashdata('flash_add','failed');
 		}else{
 			$this->admin_model->delete_matakuliah();
-			$this->session->set_flashdata('flash_add','Delete success');
+			$this->session->set_flashdata('flash_add','success');
 			// redirect('/create_matakuliah');
 			$this->load->view('admin/delete_matakuliah', $data);
-			echo $this->session->set_flashdata('flash','Delete success');
+			// echo $this->session->set_flashdata('flash','success');
 			// redirect('admin/create_matakuliah');
 		}
 	}

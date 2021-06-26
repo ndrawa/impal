@@ -15,12 +15,21 @@
     <div class="row">
       <div class="col">
       <p class="h5 text-center mb-4">Delete Materi</p>
+
+        <?php if($this->session->flashdata('flash_add') == 'success'){ ?>
+          <div class="alert alert-success alert-dismissible fade show" role="alert">
+            <?php echo $this->session->set_flashdata('flash_add','Data materi berhasil dihapus');
+            echo $this->session->flashdata('flash_add'); ?>
+          </div>
+          <?php } else if ($this->session->flashdata('flash_add') == 'failed') { ?>
+          <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            <?php echo $this->session->set_flashdata('flash_add','Data materi gagal dihapus');
+            echo $this->session->flashdata('flash_add'); ?>
+          </div>
+        <?php } ?>
+
         <form class="form-control" action="" method="post" id="deletemateri">
-          <?php if($this->session->flashdata('flash_add')){ ?>
-            <div class="alert alert-success alert-dismissible fade show" role="alert">
-              <?= $this->session->flashdata('flash_add')?>
-            </div>
-          <?php }?>
+
           <input type="text" id="id_materi" name="id_materi" placeholder="ID Materi" class="form-control"/>
           <br/>
           <input type="text" id="nama_materi" name="nama_materi" placeholder="Nama Materi" class="form-control"/>
