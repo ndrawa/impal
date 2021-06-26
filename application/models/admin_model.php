@@ -30,6 +30,8 @@
 				"nama_matakuliah" => $this->input->post('nama_matakuliah', true),
 			];
 			$this->db->where('kode_matakuliah', $data['kode_matakuliah']);
+			$this->db->delete('materi');
+			$this->db->where('kode_matakuliah', $data['kode_matakuliah']);
 			$this->db->delete('matakuliah');
 		}
 
