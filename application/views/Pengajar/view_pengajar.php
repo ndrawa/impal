@@ -12,16 +12,20 @@
 		?>
 		<p class="h5 text-center mb-4">Tabel Pengajar</p>
 		<div style="width:1200px; margin: auto;">
-			<table class="table mt-5" border="1">
-			  <tbody>
+
+			<table class="table mt-5 table-bordered table-hover">
+				<thead class="thead-dark">
+					<tr>
+						<th scope="col" width="5%"> No </th>
+						<th scope="col" align="center"> Pengajar </th>
+						<th scope="col" align="center"> ID Pengajar </th>
+						<th scope="col" align="center"> Matkul </th>
+						<th scope="col" align="center"> ID Matakuliah </th>
+					</tr>
+				</thead>
+
+			  	<tbody>
 			  		<?php  $idx = 0; ?>
-				    <tr class="table-active">
-				      <td>No</td>
-				      <td>Pengajar</td>
-				      <td>ID Pengajar</td>
-				      <td>Matkul</td>
-				      <td>ID Matakuliah</td>
-				    </tr>
 				    <?php foreach ($pengajar as $pgr) {
 						$idx = $idx + 1;
 						echo "<tr>";
