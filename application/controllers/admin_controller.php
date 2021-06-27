@@ -67,6 +67,39 @@ class admin_controller extends CI_Controller
 		}
 	}
 
+<<<<<<< Updated upstream
+=======
+	public function delete_matakuliah()
+	{
+		$data['judul'] = 'Delete Matakuliah';
+		$data['matakuliah'] = $this->admin_model->get_all_matakuliah();
+		$this->form_validation->set_rules('id_matakuliah','nama_matakuliah','required');
+		$this->form_validation->set_rules('id_pengajar','nama_pengajar','required');
+		if ($this->form_validation->run() == false){
+			$this->load->view('admin/delete_matakuliah', $data);
+			$this->session->set_flashdata('flash_add','failed');
+		}else{
+			$this->admin_model->delete_matakuliah();
+			$this->session->set_flashdata('flash_add','success');
+			// redirect('/create_matakuliah');
+			// redirect('admin/create_matakuliah');
+			$this->load->view('admin/delete_matakuliah', $data);
+			//$this->session->set_flashdata('flash','success');
+		}
+	}
+
+	// public function input_materi() {
+	// 	$this->load->view('Pengajar/input_materi');
+	// }
+
+	public function view_materi() {
+		$data['data_matkul'] = $this->admin_model->get_matkul();
+		$data['data_materi'] = $this->admin_model->get_materi();
+		$this->load->view('Pengajar/view_materi', $data);
+	}
+	
+
+>>>>>>> Stashed changes
 	public function view_pengajar()
 	{
 		$data['judul'] = 'View Pengajar';
