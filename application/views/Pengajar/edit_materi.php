@@ -15,8 +15,9 @@
 		<div class="form-control">
 		  <p class="h5 text-center mb-5 mt-4"> Edit Materi </h3>
 			<div style="margin:0 auto; width:800px;">
-				<form class="form-control mb-5" action="" method="post">
+				<!-- <form class="form-control mb-5" action="" method="post"> -->
 				<!-- <?php echo form_open_multipart('pengajar_controller/edit_materi');?> -->
+				<form class="form-control mb-5" action="" method="post" action="pengajar_controller/edit_materi" enctype="multipart/form-data">
 					<?php if($this->session->flashdata('flash_add') == 'success'){ ?>
 						<div class="alert alert-success alert-dismissible fade show" role="alert">
 							<?php echo $this->session->set_flashdata('flash_add','Data materi berhasil diubah');
