@@ -32,12 +32,13 @@ class pengajar_model extends CI_Model
 		$this->db->insert('materi',$data);
 	}
 
-	public function edit_materi()
+	public function edit_materi($file_materi)
 	{
 		$data = [
 			"kode_matakuliah" => $this->input->post('id_matakuliah'),
 			"kode_materi" => $this->input->post('id_materi', true),
 			"nama_materi" => $this->input->post('nama_materi', true),
+			"file_materi" => $file_materi,
 		];
 		$this->db->where('kode_materi', $data['kode_materi']);
 		$this->db->update('materi',$data);

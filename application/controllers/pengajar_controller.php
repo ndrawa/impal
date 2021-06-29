@@ -37,19 +37,23 @@ class pengajar_controller extends CI_Controller
 
 	public function edit_materi()
 	{
-		$data['judul'] = 'Edit Materi';
-		$this->form_validation->set_rules('id_materi','nama_materi','required');
-		if ($this->form_validation->run() == false){
-			$this->load->view('pengajar/edit_materi', $data);
-			$this->session->set_flashdata('flash_add','Update failed');
-		}else{
-			$this->pengajar_model->edit_materi();
-			$this->session->set_flashdata('flash_add','Update success');
-			// redirect('/create_matakuliah');
-			$this->load->view('pengajar/edit_materi', $data);
-			echo $this->session->set_flashdata('flash','Update success');
-			// redirect('admin/create_matakuliah');
-		}
+		$pengajar = $this->session->userdata('session_kode');
+		$data['data_matkul'] = $this->pengajar_model->get_matkul($pengajar);
+			$config['upload_path']		= FCPATH.'\upload';
+			$config['allowed_types']    = 'docx|pdf|pptx|txt|doc';
+			$config['max_size']			= 1024;
+			$this->load->library('upload', $config);
+			$this->form_validation->set_rules('id_materi','nama_materi','required');
+			if ($this->form_validation->run() == false){
+                $this->load->view('Pengajar/edit_materi', $data);
+				$this->session->set_flashdata('flash_add','failed');
+			}else{
+				$this->upload->do_upload('file_materi');
+				$file_materi = $this->upload->data('file_name');
+				$this->pengajar_model->edit_materi($file_materi);
+				$this->session->set_flashdata('flash_add','success');
+				$this->load->view('Pengajar/edit_materi',$data);
+			}
 	}
 	
 	public function view_pengajar(){
