@@ -10,35 +10,44 @@
 		<?php 
 			$this->load->view('template/navbar');
 		?>
-		<p class="h5 text-center mb-4">Tabel Pengajar</p>
-		<div style="width:1200px; margin: auto;">
+		<div class="container">
+			<div class="row">
+				<div class="form-control mt-5">
+					<p class="h5 text-center mb-5 mt-4">Tabel Pengajar</p>
+					<!-- <div style="width:1200px; margin: auto;"> -->
 
-			<table class="table mt-5 table-bordered table-hover">
-				<thead class="thead-dark">
-					<tr>
-						<th scope="col" width="5%"> No </th>
-						<th scope="col" align="center"> Pengajar </th>
-						<th scope="col" align="center"> ID Pengajar </th>
-						<th scope="col" align="center"> Matkul </th>
-						<th scope="col" align="center"> ID Matakuliah </th>
-					</tr>
-				</thead>
+					<table class="table mt-5 table-bordered table-hover">
+						<thead class="thead-dark">
+							<tr>
+								<th scope="col" width="5%"> No </th>
+								<th scope="col" align="center"> Pengajar </th>
+								<th scope="col" align="center"> ID Pengajar </th>
+								<th scope="col" align="center"> Matkul </th>
+								<th scope="col" align="center"> ID Matakuliah </th>
+							</tr>
+						</thead>
 
-			  	<tbody>
-			  		<?php  $idx = 0; ?>
-				    <?php foreach ($pengajar as $pgr) {
-						$idx = $idx + 1;
-						echo "<tr>";
-						echo "<td scope=\"row\">".$idx."</td>";
-						echo "<td>".$pgr['nama']."</td>";
-						echo "<td>".$pgr['kode_pengajar']."</td>";
-						echo "<td>".$pgr['nama_matakuliah']."</td>";
-						echo "<td>".$pgr['kode_matakuliah']."</td>";
-						echo "</tr>";
-					} ?>  
-			   </tbody>
-			</table> 
-		</div>	   
+						<tbody>
+							<?php  $idx = 0; ?>
+							<?php foreach ($pengajar as $pgr) {
+								$idx = $idx + 1;
+								echo "<tr>";
+								echo "<td scope=\"row\">".$idx."</td>";
+								echo "<td>".$pgr['nama']."</td>";
+								echo "<td>".$pgr['kode_pengajar']."</td>";
+								echo "<td>".$pgr['nama_matakuliah']."</td>";
+								echo "<td>".$pgr['kode_matakuliah']."</td>";
+								echo "</tr>";
+							} ?>  
+					</tbody>
+					</table> 
+					<!-- </div>	   -->
+				</div>	  
+			</div>	  
+		</div>	  
+		<?php 
+			$this->load->view('template/footer');
+		?>  
 	</body>
 </html>
 

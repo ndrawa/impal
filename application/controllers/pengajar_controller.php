@@ -35,7 +35,7 @@ class pengajar_controller extends CI_Controller
 		$this->load->view('Pengajar/view_materi', $data);
 	}
 
-	public function edit_materi($data)
+	public function edit_materi()
 	{
 		$config['upload_path']		= FCPATH.'\upload';
 		$config['allowed_types']    = 'docx|pdf|pptx|txt|doc';
@@ -53,15 +53,6 @@ class pengajar_controller extends CI_Controller
 		}
 	}
 	
-	public function edit($id = null)
-    {
-     $data['matkul'] = $this->pengajar_model->get_materi_by_id();
-	//  echo $data['matkul']['kode_matakuliah'];
- 
-     return $this->edit_materi($data);
-    }
-
-
 	public function view_pengajar(){
 		$data['judul'] = 'View Pengajar';
 		$data['pengajar'] = $this->pengajar_model->getall_pengajar();
@@ -74,7 +65,7 @@ class pengajar_controller extends CI_Controller
  	}
 
 	public function delete_materi($data){
-		$data['data_materi'] = $this->pengajar_model->get_materi_by_id(); 
+		$data['data_materi'] = $this->pengajar_model->get_all_materi_delete(); 
 		$this->form_validation->set_rules('id_materi','nama_materi','required');
 		if ($this->form_validation->run() == false){
 			$this->load->view('pengajar/delete_materi', $data);
@@ -83,7 +74,7 @@ class pengajar_controller extends CI_Controller
 			$this->pengajar_model->delete_materi();
 			$this->session->set_flashdata('flash_add','success');
 			$this->load->view('pengajar/delete_materi', $data);
-			$this->session->set_flashdata('flash','success');
+			echo $this->session->set_flashdata('flash','success');
 		}
 	}
 }

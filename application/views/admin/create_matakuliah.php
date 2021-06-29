@@ -14,8 +14,8 @@
 		</div>
     <div class="container">
     <div class="row">
-      <div class="col">
-      <p class="h5 text-center mb-4">Create Matakuliah</p>
+      <div class="form-control">
+      <p class="h5 text-center mb-5 mt-4">Create Matakuliah</p>
       <?php if($this->session->flashdata('flash_add') == 'success'){ ?>
           <div class="alert alert-success alert-dismissible fade show" role="alert">
             <?php echo $this->session->set_flashdata('flash_add','Data berhasil ditambahkan');
@@ -48,5 +48,8 @@
       </div>
     </div>
     </div>    
+    <?php 
+        $this->load->view('template/footer');
+    ?> 
 </body>
 </html>

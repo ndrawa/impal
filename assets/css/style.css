@@ -1,5 +1,6 @@
 table{
 	width: 100%;
+	background-color: white;
 }
 
 nav {
@@ -13,6 +14,10 @@ nav {
 
 body{
 	font-family: Verdana;
+	background-image: linear-gradient(rgba(255,255,255,0.1), rgba(56,48,48,1.00)), url('https://1.bp.blogspot.com/-l1lAHRmoXv4/YIDjTnasLuI/AAAAAAAAGVU/5Umr9zmdxTwAmjuAI-miil-qKO9b5RQNACLcBGAsYHQ/s1920/background%2Banime%2Bschool.jpg'); 
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
 	/*background-color: #caceba;*/
 	/*background: url('http://localhost/doctorcare/assets/pic/background/BgUtama1.jpg') no-repeat center;*/
 }

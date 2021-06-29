@@ -17,8 +17,8 @@
 
     <div class="container">
     <div class="row">
-      <div class="col">
-      <p class="h5 text-center mb-4">View Matakuliah</p>
+	<div class="form-control">
+      	<p class="h5 text-center mb-5 mt-4">View Matakuliah</p>
 		<table class="table mt-5 table-bordered table-hover" >
 			<thead class="thead-dark">
 	  			<tr>
@@ -27,7 +27,9 @@
 	  				<th scope="col" align="center" width="15%"> ID Matkul </th>
 					<th scope="col" align="center"> Pengajar </th>
 					<th scope="col" align="center" width="13%"> ID Pengajar </th>
-	  				<th scope="col" align="center"> Action </th>
+	  				<?php if ($this->session->userdata('session_login') == 'admin') { ?>
+						<th scope="col" align="center"> Action </th>
+					<?php } ?>
 	  			</tr>
 	  		</thead>
 
@@ -35,19 +37,21 @@
 				
 			    <?php $i=1;  foreach($matakuliah as $matkul): ?>
 			    <tr>
-			    	<td> <?= $i++ ;?></td>
+			    	<th scope="row"> <?= $i++ ;?></th>
 			        <td> <?= $matkul->nama_matakuliah;?></td>
 			        <td> <?= $matkul->kode_matakuliah;?></td>
 			    	<td> <?= $matkul->nama;?></td>		
 			        <td> <?= $matkul->kode_pengajar;?></td>
-					<td align="center"> 
-						<a href="<?php echo site_url('admin_controller/edit/'); echo $matkul->kode_matakuliah; ?>" type="button" class="btn btn-warning">
-							<img src="<?= base_url()."assets/icon/edit.svg"; ?>"> 
-						</a> 
-						<a href="<?php echo site_url('admin_controller/delete/'); echo $matkul->kode_matakuliah; ?>" type="button" class="btn btn-danger">
-							<img src="<?= base_url()."assets/icon/trash.svg"; ?>"> 
-						</a> 
-					</td>
+					<?php if ($this->session->userdata('session_login') == 'admin') { ?>
+						<td align="center"> 
+							<a href="<?php echo site_url('admin_controller/edit/'); echo $matkul->kode_matakuliah; ?>" type="button" class="btn btn-warning">
+								<img src="<?= base_url()."assets/icon/edit.svg"; ?>"> 
+							</a> 
+							<a href="<?php echo site_url('admin_controller/delete/'); echo $matkul->kode_matakuliah; ?>" type="button" class="btn btn-danger">
+								<img src="<?= base_url()."assets/icon/trash.svg"; ?>"> 
+							</a> 
+						</td>
+					<?php } ?>
 			    </tr>
 			    <tr>
 			    	
@@ -57,6 +61,9 @@
 		</table> 
       </div>
     </div>
-    </div>    
+    </div> 
+    <?php 
+        $this->load->view('template/footer');
+    ?>    
 </body>
 </html>
