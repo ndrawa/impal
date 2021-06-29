@@ -46,11 +46,11 @@
           <input type="text" id="nama_matakuliah" name="nama_matakuliah" value="<?= $matkul[0]['nama_matakuliah']?>" class="form-control"/>
           <br/>
           <label for="defaultFormRegisterConfirmEx" class="grey-text">ID Pengajar</label>
-          <input type="text" id="id_pengajar" name="id_pengajar" readonly value="<?= $matkul[0]['kode_pengajar']?>" class="form-control"/>
+          <input type="text" id="id_pengajar" name="id_pengajar" value="<?= $matkul[0]['kode_pengajar']?>" class="form-control"/>
           <br/>
           <label for="defaultFormRegisterPasswordEx" class="grey-text">Nama Pengajar</label>
           <!-- <input type="text" id="nama_pengajar" name="nama_pengajar" class="form-control" value="<?php echo $row->nama;?>" disabled/> -->
-          <input type="text" id="nama_pengajar" name="nama_pengajar" readonly value="<?= $matkul[0]['nama']?>" class="form-control"/>
+          <input type="text" id="nama_pengajar" name="nama_pengajar" value="<?= $matkul[0]['nama']?>" class="form-control"/>
           <br/>
           <div class="text-center mt-3">
             <button class="btn btn-unique" type="submit" name="tambah">Update</button>

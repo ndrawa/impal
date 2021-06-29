@@ -49,10 +49,11 @@ class admin_controller extends CI_Controller
 			$this->session->set_flashdata('flash_add','failed');
 		}else{
 			$this->admin_model->edit_matakuliah();
-			$this->session->set_flashdata('flash_add','success');
+			// $this->session->set_flashdata('flash_add','success');
 			// redirect('/create_matakuliah');
-			$this->load->view('admin/edit_matakuliah', $data);
-			echo $this->session->set_flashdata('flash','success');
+			$data['matakuliah'] = $this->admin_model->get_all_matakuliah();
+			$this->load->view('admin/view_matakuliah', $data);
+			// echo $this->session->set_flashdata('flash','success');
 			// redirect('admin/create_matakuliah');
 		}
 	}
@@ -76,7 +77,7 @@ class admin_controller extends CI_Controller
 			$this->session->set_flashdata('flash_add','failed');
 		}else{
 			$this->admin_model->delete_matakuliah(); 
-			$this->session->set_flashdata('flash_add','success');
+			// $this->session->set_flashdata('flash_add','success');
 				// redirect('/create_matakuliah');
 				// redirect('admin/create_matakuliah');
 			$data['matakuliah'] = $this->admin_model->get_all_matakuliah();
