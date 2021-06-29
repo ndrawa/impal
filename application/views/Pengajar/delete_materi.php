@@ -25,7 +25,7 @@
                 echo $this->session->flashdata('flash_add'); ?>
               </div>
             <?php } ?>
-            <form class="form-control" action="" method="post" id="deletemateri">
+            <form class="form-control mb-5" action="" method="post" id="deletemateri">
               <label for="defaultFormRegisterEmailEx" class="grey-text">Id Materi</label>
               <input type="text" id="id_materi" name="id_materi" readonly value="<?= $materi[0]['kode_materi']?>"class="form-control"/>
               <br/>
