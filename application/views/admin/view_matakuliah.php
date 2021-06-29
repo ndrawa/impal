@@ -24,9 +24,9 @@
 	  			<tr>
 	  				<th scope="col" width="5%"> No </th>
 	  				<th scope="col" align="center"> Matakuliah </th>
-	  				<th scope="col" align="center"> ID Matkul </th>
+	  				<th scope="col" align="center" width="15%"> ID Matkul </th>
 					<th scope="col" align="center"> Pengajar </th>
-					<th scope="col" align="center"> ID Pengajar </th>
+					<th scope="col" align="center" width="13%"> ID Pengajar </th>
 	  				<th scope="col" align="center"> Action </th>
 	  			</tr>
 	  		</thead>
@@ -40,11 +40,14 @@
 			        <td> <?= $matkul->kode_matakuliah;?></td>
 			    	<td> <?= $matkul->nama;?></td>		
 			        <td> <?= $matkul->kode_pengajar;?></td>
-					<td align=\"center\"> 
-							<a href="<?php echo site_url('admin_controller/edit/'); ?><?php echo $matkul->kode_matakuliah; ?>"> <img src=\"".base_url()."assets/icon/trash.svg\"></a> 
-							<a href="<?php echo site_url('admin_controller/delete/'); ?><?php echo $matkul->kode_matakuliah; ?>"> <img src=\"".base_url()."assets/icon/edit.svg\"></a> 
-						</td>
-					<!-- <td><a  > <img src="<?php site_url('assets/icon/edit.svg'); ?>""></a>&nbsp;<a  href="<?php echo site_url('admin_controller/delete/'); ?><?php echo $matkul->kode_matakuliah; ?>">Delete</a></td> -->
+					<td align="center"> 
+						<a href="<?php echo site_url('admin_controller/edit/'); echo $matkul->kode_matakuliah; ?>" type="button" class="btn btn-warning">
+							<img src="<?= base_url()."assets/icon/edit.svg"; ?>"> 
+						</a> 
+						<a href="<?php echo site_url('admin_controller/delete/'); echo $matkul->kode_matakuliah; ?>" type="button" class="btn btn-danger">
+							<img src="<?= base_url()."assets/icon/trash.svg"; ?>"> 
+						</a> 
+					</td>
 			    </tr>
 			    <tr>
 			    	
