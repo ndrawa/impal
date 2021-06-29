@@ -68,12 +68,6 @@ class pengajar_model extends CI_Model
 		}
 	}
 
-	public function get_all_materi_delete()
-	{
-			$query = $this->db->query("SELECT * from materi;");
-       		return $query->result();
-	}
-
 	public function get_materi_by_id(){
 			$id = $this->uri->segment(3);
 			$query = $this->db->query("SELECT *

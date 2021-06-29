@@ -68,7 +68,7 @@ class pengajar_controller extends CI_Controller
  	}
 
 	public function delete_materi($data){
-		$data['data_materi'] = $this->pengajar_model->get_all_materi_delete(); 
+		$data['data_materi'] = $this->pengajar_model->get_materi_by_id(); 
 		$this->form_validation->set_rules('id_materi','nama_materi','required');
 		if ($this->form_validation->run() == false){
 			$this->load->view('pengajar/delete_materi', $data);
@@ -77,7 +77,7 @@ class pengajar_controller extends CI_Controller
 			$this->pengajar_model->delete_materi();
 			$this->session->set_flashdata('flash_add','success');
 			$this->load->view('pengajar/delete_materi', $data);
-			echo $this->session->set_flashdata('flash','success');
+			$this->session->set_flashdata('flash','success');
 		}
 	}
 }
