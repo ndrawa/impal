@@ -19,23 +19,19 @@
     <div class="row">
       <div class="col">
       <p class="h5 text-center mb-4">View Matakuliah</p>
-		<table class="table mt-5" border="1">
-		  <tbody>
+		<table class="table mt-5 table-bordered table-hover" >
+			<thead class="thead-dark">
+	  			<tr>
+	  				<th scope="col" width="5%"> No </th>
+	  				<th scope="col" align="center"> Matakuliah </th>
+	  				<th scope="col" align="center"> ID Matkul </th>
+					<th scope="col" align="center"> Pengajar </th>
+					<th scope="col" align="center"> ID Pengajar </th>
+	  				<!-- <th scope="col" align="center" width="20%"> Action </th> -->
+	  			</tr>
+	  		</thead>
 
-			    <tr class="table-active">
-			      <td>No</td>
-			      <td>Matakuliah</td>
-			      <td>ID Matkul</td>
-			      <td>Pengajar</td>
-			      <td>ID Pengajar</td>
-			    </tr>
-				<!-- <tr>
-			    	<td>1</td>
-			        <td> Rezim Sisca Kohl</td>
-			    	<td> RSK</td>		
-			    	<td> Priyoga Sugeng Aditya</td>		
-			        <td> PSA</td>
-			    </tr> -->
+			<tbody>
 				
 			    <?php $i=1;  foreach($matakuliah as $matkul): ?>
 			    <tr>

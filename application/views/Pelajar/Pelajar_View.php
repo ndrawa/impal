@@ -10,16 +10,20 @@
 	<?php 
 		$this->load->view('template/navbar');
 	?>
+  <div style="background-color: #e8e8e8;">
+    <h4 style="margin-left: 50px;"> Welcome, Pelajar <?= $this->session->userdata('session_nama');?> </h4>
+    <p style="margin-left: 50px;"> Silahkan pilih tombol untuk memulai action. </p>
+  </div>
 	<div class="container">
-      <div class="row">
-        <div class="col">
-          <p class="h5 text-center mb-4">Halaman Pelajar</p>
-          <div class="text-center">
-            <a href="<?= site_url('pelajar_controller/view_matakuliah/'); ?>" class="btn btn-primary">View MataKuliah   </a>
-            <a href="<?= site_url('pelajar_controller/view_materi/'); ?>" class="btn btn-primary">View Materi   </a>
-            <a href="<?= site_url('pelajar_controller/view_pengajar/'); ?>" class="btn btn-primary">View Pengajar  </a>
-          </div>
+    <div class="row">
+      <div class="col">
+        <div class="text-center">
+          <a href="<?= site_url('pelajar_controller/view_matakuliah/'); ?>" class="btn btn-primary">View MataKuliah   </a>
+          <a href="<?= site_url('pelajar_controller/view_materi/'); ?>" class="btn btn-primary">View Materi   </a>
+          <a href="<?= site_url('pelajar_controller/view_pengajar/'); ?>" class="btn btn-primary">View Pengajar  </a>
         </div>
       </div>
+    </div>
+  </div>
 </body>
 </html>
