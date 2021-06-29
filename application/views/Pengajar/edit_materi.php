@@ -12,7 +12,7 @@
     ?>
     <h3 style="text-align: center;"> Edit Materi </h3>
     <div style="margin:0 auto; width:500px;">
-		<!-- <form class="form-control" action="" method="post"> -->
+		<form class="form-control" action="" method="post">
 			<?php echo form_open_multipart('pengajar_controller/edit_materi');?>
 			<?php if($this->session->flashdata('flash_add') == 'success'){ ?>
 	            <div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -25,25 +25,20 @@
 	            	echo $this->session->flashdata('flash_add'); ?>
 	            </div>
 	        <?php } ?>
-
-		  	<div class="form-group">
-			    <select class="form-select" aria-label="Default select example" name="id_matakuliah">
-					<option selected> Select - Mata kuliah</option>
-					<?php
-						$idx = 0;
-						foreach ($data_matkul as $dm) { ?>
-							<option value = <?= $dm['kode_matakuliah']; ?>> <?= $dm['nama_matakuliah']; ?> </option>
-					<?php } ?>
-				</select>
-		  	</div>
-			 <div class="form-group" >
-			    <input type="text" class="form-control" id="id_materi" name="id_materi" placeholder="ID Materi">
-		  	</div>
-
-		  	<div class="form-group" >
-			    <input type="text" class="form-control" id="nama_materi" name="nama_materi" placeholder="Nama Materi">
-		  	</div>
-
+            <label for="defaultFormRegisterNameEx" class="grey-text">ID Materi</label>
+            <?php 
+            foreach($matkul as $row)
+            { 
+              echo '<input type="text" id="id_materi" name="id_materi" readonly value="'.$row['kode_materi'].'" class="form-control"/>';
+            }
+            ?>
+            <br/>
+            <label for="defaultFormRegisterEmailEx" class="grey-text">ID Matakuliah</label>
+            <input type="text" id="id_matakuliah" name="id_matakuliah" readonly value="<?= $matkul[0]['kode_matakuliah']?>"  class="form-control"/>
+            <br/>
+            <label for="defaultFormRegisterEmailEx" class="grey-text">Nama Materi</label>
+            <input type="text" id="nama_materi" name="nama_materi" value="<?= $matkul[0]['nama_materi']?>" class="form-control"/>
+            <br/>
 		  	<div class="form-group">
 		  		<input type="file" id="file_materi" name="file_materi">
 		  	</div>
