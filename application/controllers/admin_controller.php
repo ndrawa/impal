@@ -38,10 +38,10 @@ class admin_controller extends CI_Controller
 		$this->load->view('admin/view_matakuliah', $data);
 	}
 
-	public function edit_matakuliah()
+	public function edit_matakuliah($data)
 	{
-		$data['judul'] = 'Edit Matakuliah';
-		$data['matakuliah'] = $this->admin_model->get_all_matakuliah();
+		// $data['judul'] = 'Edit Matakuliah';
+		// $data['matakuliah'] = $this->admin_model->get_all_matakuliah();
 		$this->form_validation->set_rules('id_matakuliah','nama_matakuliah','required');
 		$this->form_validation->set_rules('id_pengajar','nama_pengajar','required');
 		if ($this->form_validation->run() == false){
@@ -57,9 +57,17 @@ class admin_controller extends CI_Controller
 		}
 	}
 
-	public function delete_matakuliah()
+	public function edit($id = null)
+    {
+     $data['matkul'] = $this->admin_model->get_matkul_by_id();
+	//  echo $data['matkul']['kode_matakuliah'];
+ 
+     return $this->edit_matakuliah($data);
+    }
+
+	public function delete_matakuliah($data)
 	{
-		$data['judul'] = 'Delete Matakuliah';
+		// $data['judul'] = 'Delete Matakuliah';
 		$data['matakuliah'] = $this->admin_model->get_all_matakuliah();
 		$this->form_validation->set_rules('id_matakuliah','nama_matakuliah','required');
 		$this->form_validation->set_rules('id_pengajar','nama_pengajar','required');
@@ -67,15 +75,23 @@ class admin_controller extends CI_Controller
 			$this->load->view('admin/delete_matakuliah', $data);
 			$this->session->set_flashdata('flash_add','failed');
 		}else{
-			if ($this->admin_model->delete_matakuliah()) {
-				$this->session->set_flashdata('flash_add','success');
+			$this->admin_model->delete_matakuliah(); 
+			$this->session->set_flashdata('flash_add','success');
 				// redirect('/create_matakuliah');
 				// redirect('admin/create_matakuliah');
-			}
-			$this->load->view('admin/delete_matakuliah', $data);
+			$data['matakuliah'] = $this->admin_model->get_all_matakuliah();
+			$this->load->view('admin/view_matakuliah', $data);
 			//$this->session->set_flashdata('flash','success');
 		}
 	}
+
+	public function delete($id = null)
+    {
+     $data['matkul'] = $this->admin_model->get_matkul_by_id();
+	//  echo $data['matkul']['kode_matakuliah'];
+ 
+     return $this->delete_matakuliah($data);
+    }
 
 	// public function input_materi() {
 	// 	$this->load->view('Pengajar/input_materi');

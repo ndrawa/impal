@@ -18,8 +18,8 @@
           <div class="text-center">
             <a href="<?= site_url('admin_controller/create_matakuliah/'); ?>" class="btn btn-primary">Create MataKuliah   </a>
             <a href="<?= site_url('admin_controller/view_matakuliah/'); ?>" class="btn btn-primary">View MataKuliah   </a>
-            <a href="<?= site_url('admin_controller/edit_matakuliah/'); ?>" class="btn btn-primary">Edit MataKuliah   </a>
-            <a href="<?= site_url('admin_controller/delete_matakuliah/'); ?>" class="btn btn-primary">Delete MataKuliah   </a>
+            <!-- <a href="<?= site_url('admin_controller/edit_matakuliah/'); ?>" class="btn btn-primary">Edit MataKuliah   </a>
+            <a href="<?= site_url('admin_controller/delete_matakuliah/'); ?>" class="btn btn-primary">Delete MataKuliah   </a> -->
           </div>
         </div>
       </div>
