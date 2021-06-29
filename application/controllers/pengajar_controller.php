@@ -78,9 +78,10 @@ class pengajar_controller extends CI_Controller
 			$this->session->set_flashdata('flash_add','failed');
 		}else{
 			$this->pengajar_model->delete_materi();
-			$this->session->set_flashdata('flash_add','success');
-			$this->load->view('pengajar/delete_materi', $data);
-			$this->session->set_flashdata('flash','success');
+			$this->view_materi();
+			// $this->session->set_flashdata('flash_add','success');
+			// $this->load->view('pengajar/delete_materi', $data);
+			// $this->session->set_flashdata('flash','success');
 		}
 	}
 }
