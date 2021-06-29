@@ -63,13 +63,12 @@ class pengajar_controller extends CI_Controller
 	}
 
 	public function delete($id = null){
-	     $data['data_materi'] = $this->pengajar_model->get_materi_by_id();
-	     echo $data['data_materi']->$kode_materi;
+	     $data['materi'] = $this->pengajar_model->get_materi_by_id();
 	     return $this->delete_materi($data);
  	}
 
 	public function delete_materi($data){
-		$data['data_materi'] = $this->pengajar_model->get_materi_all(); 
+		$data['data_materi'] = $this->pengajar_model->get_all_materi_delete(); 
 		$this->form_validation->set_rules('id_materi','nama_materi','required');
 		if ($this->form_validation->run() == false){
 			$this->load->view('pengajar/delete_materi', $data);
@@ -77,10 +76,8 @@ class pengajar_controller extends CI_Controller
 		}else{
 			$this->pengajar_model->delete_materi();
 			$this->session->set_flashdata('flash_add','success');
-			// redirect('/create_matakuliah');
 			$this->load->view('pengajar/delete_materi', $data);
 			echo $this->session->set_flashdata('flash','success');
-			// redirect('admin/create_matakuliah');
 		}
 	}
 }
