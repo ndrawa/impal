@@ -14,7 +14,7 @@
     <div class="container">
       <div class="row">
         <div class="col">
-          <p class="h5 text-center mb-4">Menu Admin</p>
+          <p class="h5 text-center mb-4" style="color:white">Menu Admin</p>
           <div class="text-center">
             <a href="<?= site_url('admin_controller/create_matakuliah/'); ?>" class="btn btn-primary">Create MataKuliah   </a>
             <a href="<?= site_url('admin_controller/view_matakuliah/'); ?>" class="btn btn-primary">View MataKuliah   </a>
@@ -23,6 +23,9 @@
           </div>
         </div>
       </div>
-    </div>    
+    </div>  
+    <?php 
+        $this->load->view('template/footer');
+    ?>    
 </body>
 </html>

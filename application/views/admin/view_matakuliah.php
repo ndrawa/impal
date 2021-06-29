@@ -17,8 +17,8 @@
 
     <div class="container">
     <div class="row">
-      <div class="col">
-      <p class="h5 text-center mb-4">View Matakuliah</p>
+	<div class="form-control">
+      	<p class="h5 text-center mb-5 mt-4">View Matakuliah</p>
 		<table class="table mt-5 table-bordered table-hover" >
 			<thead class="thead-dark">
 	  			<tr>
@@ -35,7 +35,7 @@
 				
 			    <?php $i=1;  foreach($matakuliah as $matkul): ?>
 			    <tr>
-			    	<td> <?= $i++ ;?></td>
+			    	<th scope="row"> <?= $i++ ;?></th>
 			        <td> <?= $matkul->nama_matakuliah;?></td>
 			        <td> <?= $matkul->kode_matakuliah;?></td>
 			    	<td> <?= $matkul->nama;?></td>		
@@ -57,6 +57,9 @@
 		</table> 
       </div>
     </div>
-    </div>    
+    </div> 
+    <?php 
+        $this->load->view('template/footer');
+    ?>    
 </body>
 </html>

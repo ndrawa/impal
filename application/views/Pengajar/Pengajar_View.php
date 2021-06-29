@@ -18,6 +18,8 @@
 		<a href="<?= site_url('pengajar_controller/delete_materi/'); ?>" class="btn btn-primary">Delete Materi </a>
 		<a href="<?= site_url('pengajar_controller/edit_materi/'); ?>" class="btn btn-primary">Edit Materi </a>
 	</div>
-	
+    <?php 
+        $this->load->view('template/footer');
+    ?> 
 </body>
 </html>

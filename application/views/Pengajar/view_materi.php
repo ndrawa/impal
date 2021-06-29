@@ -10,9 +10,9 @@
         $this->load->view('template/navbar');
     ?>
 
-    <div style="width:600px; margin: 20px auto;">
+    <div class="form-control" style="width:600px; margin: 20px auto;">
     	<h2 align="center"> View Materi </h2>
-	    <form class="form-control" method="post">
+	    <form method="post">
 	    	<p align="center"> Pilih mata kuliah 
 		    <select class="form-select" aria-label="Default select example" name="id_matakuliah" onchange="tampil_materi();">
 				<option selected> Select - Mata kuliah</option>
@@ -30,7 +30,9 @@
 	<div style="width:1000px; margin: auto;">
 	<?php if ($data_materi) {
 		$idx = 0; ?>
-		<div style="margin-top: 20px;" align="center"> <strong> Tabel Materi - <?= $data_materi[0]['nama_matakuliah']; ?></strong> </div>
+
+
+		<div class="form-control" style="margin-top: 20px;" align="center"> <strong> Tabel Materi - <?= $data_materi[0]['nama_matakuliah']; ?></strong>
 		<table class="table mt-5 table-bordered table-hover" >
 	  		<thead class="thead-dark">
 	  			<tr>
@@ -62,8 +64,12 @@
 				} ?>
 			</tbody>
 		</table>
+		</div>
 	<?php } ?>
 	</div>
   	<p id="space_materi"> </p>
+    <?php 
+        $this->load->view('template/footer');
+    ?> 
 </body>
 </html>

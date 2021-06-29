@@ -56,6 +56,7 @@
             <button class="btn btn-unique" type="submit" name="tambah">Update</button>
           </div>
         </form>
+
         <!-- <form class="form-control" action="" method="post" id="createmateri">
           <label for="defaultFormRegisterNameEx" class="grey-text">Kode MataKuliah</label>
           <?php if($this->session->flashdata('flash_add')){ ?>
@@ -87,6 +88,9 @@
         </form> -->
       </div>
     </div>
-    </div>    
+    </div>  
+    <?php 
+        $this->load->view('template/footer');
+    ?>  
 </body>
 </html>

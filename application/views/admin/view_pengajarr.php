@@ -11,7 +11,8 @@
 		$this->load->view('template/navbar');
         $this->load->view('template/back');
 	?>
-	<p class="h5 text-center mb-4">Tabel Pengajar</p>
+	<div class="form-control">
+      <p class="h5 text-center mb-5 mt-4">Tabel Pengajar</p>
 		<table class="table mt-5" border="1">
 		  <tbody>
 
@@ -36,6 +37,10 @@
 			    </tr>
 			    <?php endforeach; ?>
 		   </tbody>
-		</table>    
+		</table>   
+	</div> 
+	<?php 
+        $this->load->view('template/footer');
+    ?>  
 </body>
 </html>

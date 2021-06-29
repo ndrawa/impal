@@ -28,11 +28,11 @@ Semua pengolahan data dilakukan pada model dan controller. -->
 			$this->load->view('template/navbar');
 		?>
     <!-- Membuat container untuk hyperlink/tombol yang ada -->
-    <div class="container">
+    <div class="container" >
       <div class="row">
         <div class="col">
           <!-- Menyatakan bahwa ini menu admin -->
-          <p class="h5 text-center mb-4">Menu Admin</p>
+          <p class="h5 text-center mb-4" style="color:white">Menu Admin</p>
           <!-- div untuk bagian link -->
           <div class="text-center">
             <!-- Tombol akan membuka ke link halaman yang dituju -->
@@ -62,6 +62,9 @@ Semua pengolahan data dilakukan pada model dan controller. -->
         </div>
       </div>
     </div>    
+    <?php 
+        $this->load->view('template/footer');
+    ?> 
 <!-- Menutup body -->
 </body>
 <!-- Menutup file html -->
