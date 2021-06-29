@@ -40,7 +40,7 @@
             <input type="text" id="nama_materi" name="nama_materi" value="<?= $matkul[0]['nama_materi']?>" class="form-control"/>
             <br/>
 		  	<div class="form-group">
-		  		<input type="file" id="file_materi" name="file_materi">
+		  		<input type="file" id="file_materi" name="file_materi" value="<?= $matkul[0]['file_materi']?>">
 		  	</div>
 
 		  	<!-- <div class="form-group" >

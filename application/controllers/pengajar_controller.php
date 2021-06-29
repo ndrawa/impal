@@ -41,9 +41,8 @@ class pengajar_controller extends CI_Controller
 		$config['allowed_types']    = 'docx|pdf|pptx|txt|doc';
 		$config['max_size']			= 1024;
 		$this->load->library('upload', $config);
-		$this->form_validation->set_rules('id_materi','nama_materi','required');
-		if ($this->form_validation->run() == true){
-			$this->upload->do_upload('file_materi');
+		//$this->form_validation->set_rules('id_materi','nama_materi','required');
+		if ($this->upload->do_upload('file_materi')){
 			$file_materi = $this->upload->data('file_name');
 			$this->pengajar_model->edit_materi($file_materi);
 			//$this->session->set_flashdata('flash_add','success');
