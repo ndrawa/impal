@@ -62,8 +62,14 @@ class pengajar_controller extends CI_Controller
 		$this->load->view('Pengajar/view_pengajar',$data);
 	}
 
-	public function delete_materi(){
-		$data['judul'] = 'Delete Materi';
+	public function delete($id = null){
+	     $data['data_materi'] = $this->pengajar_model->get_materi_by_id();
+	     echo $data['data_materi']->$kode_materi;
+	     return $this->delete_materi($data);
+ 	}
+
+	public function delete_materi($data){
+		$data['data_materi'] = $this->pengajar_model->get_materi_all(); 
 		$this->form_validation->set_rules('id_materi','nama_materi','required');
 		if ($this->form_validation->run() == false){
 			$this->load->view('pengajar/delete_materi', $data);

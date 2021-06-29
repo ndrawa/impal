@@ -30,7 +30,7 @@
 
         <form class="form-control" action="" method="post" id="deletemateri">
 
-          <input type="text" id="id_materi" name="id_materi" placeholder="ID Materi" class="form-control"/>
+          <input type="text" id="id_materi" name="id_materi" readonly value="<?= $data_materi[0]['kode_materi']?>"class="form-control"/>
           <br/>
           <input type="text" id="nama_materi" name="nama_materi" placeholder="Nama Materi" class="form-control"/>
           <br/>

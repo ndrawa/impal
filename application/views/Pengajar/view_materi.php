@@ -38,7 +38,7 @@
 	  				<th scope="col" align="center"> Kode Materi </th>
 	  				<th scope="col" align="center"> Nama Materi </th>
 	  				<th scope="col" align="center" width="30%"> File Materi </th>
-	  				<!-- <th scope="col" align="center" width="20%"> Action </th> -->
+	  				<th scope="col" align="center"> Action </th>
 	  			</tr>
 	  		</thead>
 
@@ -49,12 +49,16 @@
 					echo "<th>".$idx."</th>";
 					echo "<td>".$materi['kode_materi']."</td>";
 					echo "<td>".$materi['nama_materi']."</td>";
-					echo "<td> <a href=\"".base_url()."upload/".$materi['file_materi']."\" download> Download materi </a> </td>";
-					/*echo "<td align=\"center\"> 
-							<button type=\"button\" class=\"btn btn-danger\"> <img src=\"".base_url()."assets/icon/trash.svg\"> Delete </button> 
-							<button type=\"button\" class=\"btn btn-warning\"> <img src=\"".base_url()."assets/icon/edit.svg\"> Edit </button> 
-						</td>";*/
-					echo "</tr>";
+					echo "<td> <a href=\"".base_url()."upload/".$materi['file_materi']."\" download> Download materi </a> </td>";?>
+					<td align="center"> 
+						<a href="<?php echo site_url('pengajar_controller/edit/'); echo $materi['kode_materi']; ?>" type="button" class="btn btn-warning">
+							<img src="<?= base_url()."assets/icon/edit.svg"; ?>"> 
+						</a> 
+						<a href="<?php echo site_url('pengajar_controller/delete/'); echo $materi['kode_materi']; ?>" type="button" class="btn btn-danger">
+							<img src="<?= base_url()."assets/icon/trash.svg"; ?>"> 
+						</a> 
+					 </td>
+					<?php echo "</tr>";
 				} ?>
 			</tbody>
 		</table>

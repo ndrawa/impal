@@ -68,6 +68,15 @@ class pengajar_model extends CI_Model
 		}
 	}
 
+	public function get_materi_by_id(){
+			$id = $this->uri->segment(3);
+			$query = $this->db->query("SELECT *
+									   FROM materi 
+									   join matakuliah on matakuliah.kode_matakuliah = materi.kode_matakuliah
+									   WHERE materi.kode_materi = '$id';");
+			return $query->result_array();
+	}
+
 	function getall_pengajar(){
 		$result = $this->db->query("SELECT pengajar.nama , pengajar.kode_pengajar, matakuliah.nama_matakuliah ,
 									matakuliah.kode_matakuliah
