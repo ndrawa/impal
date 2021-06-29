@@ -49,7 +49,7 @@ class pengajar_controller extends CI_Controller
 			$this->view_materi();
 		}else{
 			$this->load->view('Pengajar/edit_materi', $data);
-			$this->session->set_flashdata('flash_add','failed');
+			//$this->session->set_flashdata('flash_add','failed');
 		}
 	}
 	

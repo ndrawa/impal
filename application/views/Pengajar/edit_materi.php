@@ -13,7 +13,7 @@
     <h3 style="text-align: center;"> Edit Materi </h3>
     <div style="margin:0 auto; width:500px;">
 		<form class="form-control" action="" method="post">
-			<?php echo form_open_multipart('pengajar_controller/edit_materi');?>
+		<!-- <?php echo form_open_multipart('pengajar_controller/edit_materi');?> -->
 			<?php if($this->session->flashdata('flash_add') == 'success'){ ?>
 	            <div class="alert alert-success alert-dismissible fade show" role="alert">
 	            	<?php echo $this->session->set_flashdata('flash_add','Data materi berhasil diubah');
