@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 20 Apr 2021 pada 05.18
+-- Waktu pembuatan: 30 Jun 2021 pada 09.41
 -- Versi server: 10.4.8-MariaDB
 -- Versi PHP: 7.3.11
 
@@ -45,6 +45,17 @@ CREATE TABLE `matakuliah` (
   `nama_matakuliah` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data untuk tabel `matakuliah`
+--
+
+INSERT INTO `matakuliah` (`kode_matakuliah`, `kode_pengajar`, `nama_matakuliah`) VALUES
+('CYB', 'PSA', 'Keamanan Siber'),
+('DAP', 'IWY', 'Dasar Algoritma Pemrograman'),
+('ITG', 'PSA', 'Integral'),
+('MPR', 'IWY', 'Manajemen Proyek'),
+('SPT', 'PSA', 'Sistem Paralel dan Terdistribusi');
+
 -- --------------------------------------------------------
 
 --
@@ -54,8 +65,19 @@ CREATE TABLE `matakuliah` (
 CREATE TABLE `materi` (
   `kode_materi` varchar(5) NOT NULL,
   `kode_matakuliah` varchar(255) NOT NULL,
-  `nama_materi` varchar(255) NOT NULL
+  `nama_materi` varchar(255) NOT NULL,
+  `file_materi` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `materi`
+--
+
+INSERT INTO `materi` (`kode_materi`, `kode_matakuliah`, `nama_materi`, `file_materi`) VALUES
+('CYB-2', 'CYB', 'Networking', '12__Networking_and_communication.pdf'),
+('DAP-1', 'DAP', 'Conditional', '2021-1_test_CLO_12.docx'),
+('DAP-2', 'DAP', 'Looping', 'COVER.docx'),
+('DAP-3', 'DAP', 'List dan Array', '7-000036-01p_INF_Broto_50-60.pdf');
 
 -- --------------------------------------------------------
 
@@ -71,6 +93,14 @@ CREATE TABLE `pelajar` (
   `password` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data untuk tabel `pelajar`
+--
+
+INSERT INTO `pelajar` (`nim`, `nama`, `jurusan`, `email`, `password`) VALUES
+('1301180187', 'Nur Fuad Azizi', 'Informatika', 'fuadazizi@student.telkomuniversity.ac.id', '12345'),
+('1301184200', 'Hafidz Lazuardi', 'Informatika', 'hafidz@student.telkomuniversity.ac.id', '12345');
+
 -- --------------------------------------------------------
 
 --
@@ -83,6 +113,14 @@ CREATE TABLE `pengajar` (
   `email` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `pengajar`
+--
+
+INSERT INTO `pengajar` (`kode_pengajar`, `nama`, `email`, `password`) VALUES
+('IWY', 'Indra Wahyudi', 'indra@telkomuniversity.ac.id', '12345'),
+('PSA', 'Priyoga Sugeng A', 'priyogaaditya@telkomuniversity.ac.id', '12345');
 
 --
 -- Indexes for dumped tables
