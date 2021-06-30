@@ -29,10 +29,7 @@
           <a href="<?php echo site_url('pelajar_controller/view_pengajar/');?>" type="button" class="btn btn-secondary mt-4">
 						<img src="<?= base_url()."assets/pic/pic3.jpeg";?>" width="150" height="150" > 
             <br>View Pengajar</br>
-					</a> 
-          <!-- <a href="<?= site_url('pelajar_controller/view_matakuliah/'); ?>" class="btn btn-primary">View MataKuliah   </a>
-          <a href="<?= site_url('pelajar_controller/view_materi/'); ?>" class="btn btn-primary">View Materi   </a>
-          <a href="<?= site_url('pelajar_controller/view_pengajar/'); ?>" class="btn btn-primary">View Pengajar  </a> -->
+					</a>
         </div>
       </div>
     </div>

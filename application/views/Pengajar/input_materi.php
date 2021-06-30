@@ -15,9 +15,7 @@
 		<div class="form-control">
 			<p class="h5 text-center mb-5 mt-4"> Input Materi </h3>
 				<div style="margin:0 auto; width:800px;">
-				<!-- <form class="form-control mb-5" action="" method=""> -->
 				<form class="form-control mb-5" action="" method="post" action="pengajar_controller/input_materi" enctype="multipart/form-data">
-					<!-- <?php echo form_open_multipart('pengajar_controller/input_materi');?> -->
 					<?php if($this->session->flashdata('flash_add') == 'success'){ ?>
 						<div class="alert alert-success alert-dismissible fade show" role="alert">
 							<?php echo $this->session->set_flashdata('flash_add','Data materi berhasil ditambahkan');
@@ -51,11 +49,6 @@
 					<div class="form-group">
 						<input type="file" id="file_materi" name="file_materi">
 					</div>
-
-					<!-- <div class="form-group" >
-						<label for="exampleFormControlFile1"> Choose File </label>
-						<input type="file" class="form-control-file" id="exampleFormControlFile1">
-					</div> -->
 					<div class="text-center mb-5">
 						<button type="submit" class="btn btn-primary" name="tambah">Save</button>
 					</div>

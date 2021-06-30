@@ -31,14 +31,6 @@
 
         <form class="form-control" action="" method="post" id="editmatakuliah">
           <label for="defaultFormRegisterNameEx" class="grey-text">ID MataKuliah</label>
-          <!-- <select class="form-control" id="id_matakuliah" name="id_matakuliah">
-            <?php 
-            foreach($matakuliah as $row)
-            { 
-              echo '<option value="'.$row->kode_matakuliah.'">'.$row->kode_matakuliah.'</option>';
-            }
-            ?>
-          </select> -->
 
           <input type="text" id="id_matakuliah" name="id_matakuliah" readonly value="<?= $matkul[0]['kode_matakuliah']?>"  class="form-control"/>
           <br/>
@@ -49,43 +41,12 @@
           <input type="text" id="id_pengajar" name="id_pengajar" value="<?= $matkul[0]['kode_pengajar']?>" class="form-control"/>
           <br/>
           <label for="defaultFormRegisterPasswordEx" class="grey-text">Nama Pengajar</label>
-          <!-- <input type="text" id="nama_pengajar" name="nama_pengajar" class="form-control" value="<?php echo $row->nama;?>" disabled/> -->
           <input type="text" id="nama_pengajar" name="nama_pengajar" value="<?= $matkul[0]['nama']?>" class="form-control"/>
           <br/>
           <div class="text-center mt-3">
             <button class="btn btn-unique" type="submit" name="tambah">Update</button>
           </div>
         </form>
-
-        <!-- <form class="form-control" action="" method="post" id="createmateri">
-          <label for="defaultFormRegisterNameEx" class="grey-text">Kode MataKuliah</label>
-          <?php if($this->session->flashdata('flash_add')){ ?>
-            <div class="alert alert-success alert-dismissible fade show" role="alert">
-              <?= $this->session->flashdata('flash_add')?>
-            </div>
-          <?php }?>
-          <label for="defaultFormRegisterNameEx" class="grey-text">Kode MataKuliah</label>
-          <input type="text" id="id_matakuliah" name="id_matakuliah"  class="form-control"/>
-          <button class="btn btn-outline-warning" onclick="window.location.href='<?php echo base_url().'index.php/admin_controller/cari_idmatkul'?>'"> Search </button>
-              <input type="text" id="id_matakuliah" name="id_matakuliah"  class="form-control"/>
-          <br/>
-          <label for="defaultFormRegisterEmailEx" class="grey-text">Nama MataKuliah</label>
-          <input type="text" id="nama_matakuliah" name="nama_matakuliah" class="form-control"/>
-          <br/>
-          <label for="defaultFormRegisterConfirmEx" class="grey-text">Kode Pengajar</label>
-          <input type="text" id="id_pengajar" name="id_pengajar" class="form-control"/>
-              <input type="text" id="id_pengajar" name="id_pengajar" class="form-control" placeholder="<?php echo $data; ?>" disabled="disabled"/> 
-          <br/>
-          <label for="defaultFormRegisterPasswordEx" class="grey-text">Nama Pengajar</label>
-          <input type="text" id="nama_pengajar" name="nama_pengajar" class="form-control" placeholder="Priyoga Sugeng A"; disabled="disabled"/>
-          <br/>
-          <label for="defaultFormRegisterPasswordEx" class="grey-text">Nama Pengajar</label>
-          <input type="text" id="nama_pengajar" name="nama_pengajar" class="form-control"/>
-          <br/>
-          <div class="text-center mt-3">
-            <button class="btn btn-unique" type="submit" name="tambah">Update</button>
-          </div>
-        </form> -->
       </div>
     </div>
     </div>  

@@ -36,28 +36,9 @@ Semua pengolahan data dilakukan pada model dan controller. -->
           <!-- div untuk bagian link -->
           <div class="text-center">
             <!-- Tombol akan membuka ke link halaman yang dituju -->
-            
-            <!-- <div class="btn-group">
-              <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Kelola Matakuliah
-              </button>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="<?= site_url('admin_controller/create_matakuliah/'); ?>"> Create Matakuliah </a> </li>
-                <li><a class="dropdown-item" href="<?= site_url('admin_controller/view_matakuliah/'); ?>"> View Matakuliah </a> </li>
-                <li><a class="dropdown-item" href="<?= site_url('admin_controller/edit_matakuliah/'); ?>"> Edit Matakuliah </a> </li>
-                <li><a class="dropdown-item" href="<?= site_url('admin_controller/delete_matakuliah/'); ?>"> Delete Matakuliah </a> </li>
-              </ul>
-            </div> -->
-
             <a href="<?= site_url('admin_controller/kelola_matakuliah/'); ?>" class="btn btn-primary">Kelola MataKuliah </a>
             <a href="<?= site_url('pengajar_controller/view_pengajar/'); ?>" class="btn btn-primary">View Pengajar </a>
-	          <!-- <a href="<?= site_url('pelajar_controller/view_pelajar/'); ?>" class="btn btn-primary">View Pelajar </a> -->
 	          <a href="<?= site_url('admin_controller/view_materi/'); ?>" class="btn btn-primary">View Materi </a>
-            <!-- <button class="btn btn-unique" onclick="window.location.href='<?= site_url('admin_controller/create_matakuliah/'); ?>'">Crate MataKuliah</button> -->
-            <!-- <button class="btn btn-unique" type="submit">Create MataKuliah</button>
-            <button class="btn btn-unique" type="submit">Edit MataKuliah</button>
-            <button class="btn btn-unique" type="submit">View MataKuliah</button>
-            <button class="btn btn-unique" type="submit">Delete MataKuliah</button> -->
           </div>
         </div>
       </div>

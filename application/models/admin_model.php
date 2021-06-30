@@ -46,18 +46,11 @@
 
 		public function get_matkul_by_id()
 		{
-			// $this->db->limit(1);
-			// $query = $this->db->get();
-			// $this->db->query("SELECT * FROM matakuliah");
-			// $this->db->where('kode_matakuliah',$this->uri->segment(3));
-			// echo $this->db->result_array()['nama_matakuliah'];
-			// return $this->db->result_array();
 			$id = $this->uri->segment(3);
 			$query = $this->db->query("SELECT *
 									   FROM matakuliah 
 									   join pengajar on matakuliah.kode_pengajar = pengajar.kode_pengajar
 									   WHERE matakuliah.kode_matakuliah = '$id';");
-			// echo $query->result_array()['kode_matakuliah'];
 			return $query->result_array();
 		}
 

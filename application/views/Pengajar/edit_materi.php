@@ -15,8 +15,6 @@
 		<div class="form-control">
 		  <p class="h5 text-center mb-5 mt-4"> Edit Materi </h3>
 			<div style="margin:0 auto; width:800px;">
-				<!-- <form class="form-control mb-5" action="" method="post"> -->
-				<!-- <?php echo form_open_multipart('pengajar_controller/edit_materi');?> -->
 				<form class="form-control mb-5" action="" method="post" action="pengajar_controller/edit_materi" enctype="multipart/form-data">
 					<?php if($this->session->flashdata('flash_add') == 'success'){ ?>
 						<div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -30,12 +28,9 @@
 						</div>
 					<?php } ?>
 					<label for="defaultFormRegisterNameEx" class="grey-text">ID Materi</label>
-					<?php 
-					foreach($matkul as $row)
-					{ 
-					echo '<input type="text" id="id_materi" name="id_materi" readonly value="'.$row['kode_materi'].'" class="form-control"/>';
-					}
-					?>
+					<?php foreach($matkul as $row) { 
+						echo '<input type="text" id="id_materi" name="id_materi" readonly value="'.$row['kode_materi'].'" class="form-control"/>';
+					} ?>
 					<br/>
 					<label for="defaultFormRegisterEmailEx" class="grey-text">ID Matakuliah</label>
 					<input type="text" id="id_matakuliah" name="id_matakuliah" readonly value="<?= $matkul[0]['kode_matakuliah']?>"  class="form-control"/>
@@ -46,11 +41,6 @@
 					<div class="form-group">
 						<input type="file" id="file_materi" name="file_materi" value="<?= $matkul[0]['file_materi']?>">
 					</div>
-
-					<!-- <div class="form-group" >
-						<label for="exampleFormControlFile1"> Choose File </label>
-						<input type="file" class="form-control-file" id="exampleFormControlFile1">
-					</div> -->
 					<div class="text-center mt-3">
 						<button type="submit" class="btn btn-primary" name="tambah">Save</button>
 					</div>

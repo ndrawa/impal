@@ -14,7 +14,6 @@
 			<div class="row">
 				<div class="form-control mt-5">
 					<p class="h5 text-center mb-5 mt-4">Tabel Pengajar</p>
-					<!-- <div style="width:1200px; margin: auto;"> -->
 
 					<table class="table mt-5 table-bordered table-hover">
 						<thead class="thead-dark">
@@ -41,7 +40,6 @@
 							} ?>  
 					</tbody>
 					</table> 
-					<!-- </div>	   -->
 				</div>	  
 			</div>	  
 		</div>	  

@@ -31,19 +31,6 @@
 
         <form class="form-control" action="" method="post" id="deletematakuliah">
           <label for="defaultFormRegisterNameEx" class="grey-text">ID MataKuliah</label>
-          <!-- <select class="form-control" id="id_matakuliah" name="id_matakuliah">
-            <?php 
-            foreach($matakuliah as $row)
-            { 
-              echo '<option value="'.$row->kode_matakuliah.'">'.$row->kode_matakuliah.'</option>';
-            }
-            ?>
-          </select> -->
-          <!-- <?php if($this->session->flashdata('flash_add')){ ?>
-            <div class="alert alert-success alert-dismissible fade show" role="alert">
-              <?= $this->session->flashdata('flash_add')?>
-            </div>
-          <?php }?> -->
 
           <input type="text" id="id_matakuliah" name="id_matakuliah" readonly value="<?= $matkul[0]['kode_matakuliah']?>"  class="form-control"/>
           <br/>

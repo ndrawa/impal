@@ -17,8 +17,6 @@
 	<div align="center" style="margin: 50px auto;">
 		<a href="<?= site_url('pengajar_controller/input_materi/'); ?>" class="btn btn-primary">Input Materi </a>
 		<a href="<?= site_url('pengajar_controller/view_materi/'); ?>" class="btn btn-primary">View Materi </a>
-		<!-- <a href="<?= site_url('pengajar_controller/delete_materi/'); ?>" class="btn btn-primary">Delete Materi </a>
-		<a href="<?= site_url('pengajar_controller/edit_materi/'); ?>" class="btn btn-primary">Edit Materi </a> -->
 	</div>
     <?php 
         $this->load->view('template/footer');

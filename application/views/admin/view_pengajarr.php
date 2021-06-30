@@ -17,11 +17,11 @@
 		  <tbody>
 
 			    <tr class="table-active">
-			      <td>No</td>
-			      <td>Pengajar</td>
-			      <td>ID Pengajar</td>
-			      <td>Matkul</td>
-			      <td>ID Matakuliah</td>
+			      	<td>No</td>
+			      	<td>Pengajar</td>
+			      	<td>ID Pengajar</td>
+			      	<td>Matkul</td>
+			      	<td>ID Matakuliah</td>
 			    </tr>
 			    <?php foreach($pengajar as $pgr): ?>
 			    <tr>
