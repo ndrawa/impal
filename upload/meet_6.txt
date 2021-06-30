@@ -1,7 +1,0 @@
-belum selesai profil toko
-
-desain masih perlu diselesaikan
-
-buat invoice: nama bank, nomor v akun, total, batas bayar, cara pembayaran
-
-tambahan ulasan: buat kalau tidak ada ulasan,  tambahan ketika masih ada di detail produk (preview beberapa ulasan & diskusi)

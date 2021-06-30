@@ -1,7 +1,0 @@
-membuat tampilan detail produk (seperti tokped, shopee, lazada)
-dan ulasan:
- - rating
- - data ulasan
-diskusi:
- - nama
- - diskusinya
